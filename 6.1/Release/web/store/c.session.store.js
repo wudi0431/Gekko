@@ -1,0 +1,1 @@
+define(["cBase","cAbstractStore","cSessionStorage"],function(a,b,c){var d=new a.Class(b,{__propertys__:function(){this.sProxy=c.getInstance()},initialize:function($super,a){$super(a)}});return d});

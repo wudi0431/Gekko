@@ -1,0 +1,182 @@
+{
+  "requirejs": {
+    "res": {
+      "options": {
+        "baseUrl": "<%= config.srcDir %>/3rdlibs",
+        "paths": {
+          "$": "zepto",
+          "_": "underscore",
+          "B": "backbone",
+          "F": "fastclick",
+          "libs": "libs_r"
+        },
+        "include": [
+              "$",
+              "_",
+              "B",
+              "F",
+              "libs"
+            ],
+        "out": "<%= config.destDir %>/3rdlibs/libs.js"
+      }
+    },
+    "app": {
+      "options": {
+        "uglify": {
+          "except": ["$super"]
+        },
+        "baseUrl": "<%= config.srcDir %>",
+        "paths": {
+
+          "text": "3rdlibs/require.text",
+          "libs": "http://res.m.ctrip.com/html5/scripts/libs_r_1.1.js",
+
+          "cCoreInherit": "core/c.core.inherit",
+
+          "AbstractAPP": "c.abstract.app",
+          "App": "business/c.business.app",
+
+          "c": "common/c",
+          "cBase": "common/c.base",
+          "cLog": "common/c.log",
+          "cValidate": "util/c.validate",
+          "Validate": "util/c.validate",
+
+
+          "cSales": "common/c.sales",
+          "cLazyload": "common/c.lazyload",
+          "cListAdapter": "common/c.common.listadapter",
+          "cGeoService": "common/c.geo.service",
+          "cGeoHelper":  "common/c.geo.helper",
+          "cImgLazyload":  "common/c.img.lazyload",
+
+          "rsa": "business/c.business.rsa",
+
+
+          "cUtilityHybrid": "util/c.utility.hybrid",
+          "cUtilityHash": "util/c.utility.hash",
+          "cUtilityDate": "util/c.utility.date",
+          "cUtilityServertime": "util/c.utility.servertime",
+          "cUtilityCrypt": "util/c.utility.crypt",
+          "cUtility": "util/c.utility",
+
+
+          "cAbstractStore": "store/c.abstract.store",
+          "cAbstractStorage": "store/c.abstract.storage",
+          "cStore": "store/c.local.store",
+          "cStorage": "store/c.local.storage",
+          "memStore": "store/c.memorystore",
+          "CommonStore": "store/c.common.store",
+
+
+          "cAjax": "common/c.ajax",
+          "cAbstractModel": "model/c.abstract.model",
+          "cModel": "model/c.model",
+          "cUserModel": "model/c.user.model",
+          "cMultipleDate": "model/c.multiple.data",
+
+
+          "PageStore": "store/c.store.package",
+
+
+          "cUI": "ui/c.ui",
+          "cUICore": "ui/c.ui.core",
+          "cHistory": "ui/c.ui.history",
+          "cUIView": "ui/c.ui.view",
+          "cView": "business/c.business.view",
+          "cDataSource": "ui/c.ui.datasource",
+          "cUIBase": "ui/c.ui.base",
+          "cUIAbstractView": "ui/c.ui.abstract.view",
+
+          "cUIAlert": "ui/c.ui.alert",
+          "cUIAnimation": "ui/c.ui.animation",
+          "cUICitylist": "ui/c.ui.citylist",
+          "cUIHeadWarning": "ui/c.ui.head.warning",
+          "cUIInputClear": "ui/c.ui.input.clear",
+          "cUILayer": "ui/c.ui.layer",
+          "cUILoading": "ui/c.ui.loading",
+          "cUILoadingLayer": "ui/c.ui.loading.layer",
+          "cUIMask": "ui/c.ui.mask",
+          "cUIPageview": "ui/c.ui.page.view",
+          "cUIScrollRadio": "ui/c.ui.scroll.radio",
+          "cUIScrollRadioList": "ui/c.ui.scroll.radio.list",
+          "cUIScrollList": "ui/c.ui.scrolllist",
+          "cUIToast": "ui/c.ui.toast",
+          "cUIWarning": "ui/c.ui.warning",
+          "cUIWarning404": "ui/c.ui.warning404",
+          "cUIHashObserve": "ui/c.ui.hash.observe",
+          "cUIEventListener": "ui/c.ui.event.listener",
+          "cUISwitch": "ui/c.ui.switch",
+          "cUIScroll": "ui/c.ui.scroll",
+          "cUINum": "ui/c.ui.num",
+
+          "cUIGroupList": "ui/c.ui.group.list",
+          "cUIBusinessGroupList": "ui/c.ui.business.group.list",
+          "cUITab": "ui/c.ui.tab",
+          "cUIImageSlider": "ui/c.ui.imageSlider",
+          "cUIBubbleLayer": "ui/c.ui.bubble.layer",
+
+
+          "cWidgetFactory": "widget/c.widget.factory",
+          "cWidgetHeaderView": "widget/c.widget.headerview",
+          "cWidgetListView": "widget/c.widget.listview",
+          "cWidgetTipslayer": "widget/c.widget.tipslayer",
+          "cWidgetInputValidator": "widget/c.widget.inputValidator",
+          "cWidgetPublisher": "widget/c.widget.publisher",
+          "cWidgetGeolocation": "widget/c.widget.geolocation",
+          "cWidgetAbstractCalendar": "widget/c.widget.abstract.calendar",
+          "cWidgetCalendar": "widget/c.widget.calendar",
+          "cWidgetCalendarPrice": "widget/c.widget.calendar.price",
+          "cWidgetSlide": "widget/c.widget.slide",
+          "cWidgetMember": "widget/c.widget.member",
+          "cWidgetGuider": "widget/c.widget.guider",
+          "cWidgetCaptcha": "widget/c.widget.captcha",
+
+		  "cCalendar": "widget/c.calendar",
+		  "cHolidayCalendar": "widget/c.holiday.calendar",
+		  "cHolidayPriceCalendar": "widget/c.holiday.price.calendar",
+
+
+          "cBasePageView": "page/c.page.base",
+          "cCommonPageFactory": "page/c.page.factory",
+          "cCommonListPage": "page/c.page.common.list",
+
+
+          "cHybridFacade": "hybrid/c.hybrid.facade",
+          "cHybridShell": "hybrid/c.hybrid.shell"
+        },
+        "include": [
+          "AbstractAPP",
+          "App",
+          "c",
+          "cUICore",
+          "cUI",
+          "cHistory",
+          "cUIScrollList",
+          "cUIAnimation",
+          "cUtility",
+          "cBase",
+          "cView",
+          "cAbstractModel",
+          "cModel",
+          "cStore",
+          "cStorage",
+          "cAjax",
+          "cLog",
+          "cDataSource",
+          "CommonStore",
+          "cMultipleDate",
+          "cLazyload",
+		  "cImgLazyload",
+          "cListAdapter",
+
+          "cBasePageView",
+          "cCommonPageFactory",
+          "cWidgetFactory",
+          "common_r"
+        ],
+        "out": "<%= config.destDir %>/common.js"
+      }
+    }
+  }
+}
