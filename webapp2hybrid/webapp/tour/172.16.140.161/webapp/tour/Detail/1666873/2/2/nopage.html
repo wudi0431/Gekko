@@ -1,0 +1,353 @@
+<html>
+<head><base href="../../../../../../.."><script type="text/javascript" src="LizardLocalroute.js"></script>
+    
+    <title>团队游</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="团队游">
+    <meta name="keywords" content="团队游">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-startup-image" href="../lizard/res.m.ctrip.com/html5/content/images/640.png" sizes="320x460">
+    <link rel="apple-touch-startup-image" href="../lizard/res.m.ctrip.com/html5/content/images/940.png" sizes="640x920">
+    <link rel="apple-touch-startup-image" href="../lizard/res.m.ctrip.com/html5/content/images/1004.png" sizes="768x1004">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../lizard/res.m.ctrip.com/html5/Content/images/57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../lizard/res.m.ctrip.com/html5/Content/images/72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../lizard/res.m.ctrip.com/html5/Content/images/114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../lizard/res.m.ctrip.com/html5/Content/images/144.png">
+    <link rel="stylesheet" type="text/css" href="../lizard/webresource.c-ctrip.com/styles/h5/common/main.css">
+    <link rel="stylesheet" type="text/css" href="172.16.140.161/html5/tour/webresource/tour/res/style/group_detail.css">
+    
+    <meta name="appBaseUrl" content="/webapp/tour/">
+    <meta name="webresourceBaseUrl" content="http://webresource.c-ctrip.com/">
+
+</head>
+<body class="gray" onselectstart="return false">
+        <div id="headerview" style="height: 48px;">
+		<header></header>
+	</div>
+	<div id="main">
+		<div class="main-frame">
+			<div class="main-viewport"><p>hello</p></div>
+			<div class="main-state"></div>
+		</div>	
+	</div>
+	<div id="footer"></div>
+
+    <script type="text/lizard-config">
+        {
+            "url_schema": "detail/{pid}/{scid}/{dcid}/{from}",
+            "model": {
+                "apis":[{
+                    url:'http://m.ctrip.com/restapi/vacationapi/product/productdetail',
+                    postdata:{"pId":Lizard.P("pid"),"scId":Lizard.P("scid"),"dcId":Lizard.P("dcid"),"reqType":[1],"head":{"cid":"a64ac7fd-203a-83bd-5e99-6bb4d594171b","ctok":"351858059049938","cver":"1.0","lang":"01","sid":"8888","syscode":"09","auth":""}}
+                }],
+                "filter":function (datas){
+                    var ret = {data:datas[0].data, productType: ''};
+                    return ret;
+                },
+				setTDK: function(datas)		
+                {
+				    var detailData = datas[0].data;
+				    return {title: detailData.pName, description: detailData.title, keywords: detailData.pName}
+                }				
+            },
+            "view":{
+                "header": Lizard.T("headTmpl"),
+                "viewport": Lizard.T("detail_tab")
+            },
+            "controller":"172.16.140.161/html5/tour/webresource/tour/controllers/detail.js"
+        }
+    </script>
+
+    <script id="headTmpl" type="text/lizard-template">
+        <h1>产品详情</h1>
+    </script>
+
+    <script id="detail_tab" type="text/lizard-template">        
+       <div class="body">
+    <div class="banner_box" id="js_detail_pic_slide">
+    </div>
+    <ul class="detail_tab">
+	    <li class="current">概要</li>
+	    <li><%if(data.travelDay){ %><%=data.travelDay %>日<%}else{ %>暂无<%} %>行程</li>
+	    <li><%if(productType===""){ %> <%=data.commentNum %>条点评<%}else{ %> 秒杀细则 <%} %></li>
+    </ul>
+    <div style="display: none;" class="tab_loading">
+		<div style="" class="cui-breaking-load"> <div class="cui-i cui-m-logo"></div> <div class="cui-i cui-w-loading"></div></div>
+	</div>
+    <div class="profile_box js_tab_showbox">
+    <%if(data.detailInfo){ %>
+	    <div class="product_wrap">
+                <h2><%=data.detailInfo.title %></h2>
+		        <div class="price_box">
+                    <% if(data.detailInfo.price == 0) { %>
+                    <p class="price font14">实时计价</p>
+                    <% } else { %>
+                    <p class="price"><dfn>¥</dfn><%=data.detailInfo.price %><em>起</em></p>
+                    <%} %>
+                    <% if(data.detailInfo.isCashBack) { %><i class="orange"><dfn>返</dfn><%=data.detailInfo.cashBackAmount %></i><%} %>
+				    <% if(data.detailInfo.isWifi) { %><i class="wifi">免费WiFi</i><%} %>
+                    <% if(!_.isEmpty(data.detailInfo.specialTags)) { %>
+                    <% _.each(data.detailInfo.specialTags, function (v, k) { %>
+				    <i class="green"><%=v %></i>
+                    <% }) %>
+                    <% } %>
+                    <% if(productType==="cskill") { %><span class="seckill_time js_seckillttime">
+                        <% if(secKillSetting.cskillStatus === "start") {%>
+                            距离结束<%= secKillSetting.lastTime.hour %>:<%= secKillSetting.lastTime.minute %>:<%= secKillSetting.lastTime.second %></span> 
+                        <% } %>
+                    <% } %>
+		        </div>
+                <% if(productType==="cskill") { %>  
+                    <div class="seckill_price">
+				        <div class="seckill_priceleft">
+					        <p><span>秒杀价</span><span><dfn>¥</dfn><%=cskillData.PromotionPrice%><em>起</em></span></p>
+					        <p>市场价&nbsp;<dfn>¥</dfn><del><%=cskillData.MarketPrice%></del>起</p>
+				        </div>
+				        <div class="seckill_priceright">
+					        <% if(cskillData.Inventory >-99999 && cskillData.Inventory < 99999) { %>
+                                <p>最后<span><%= cskillData.Inventory %></span>位</p>
+                            <% } %>
+					        <p><%= cskillData.Schedule %>出发</p>
+				        </div>
+			        </div>
+                <%} %>
+                <% if(!_.isEmpty(data.detailInfo.promos)) { %>
+                <% _.each(data.detailInfo.promos, function (v, k) { %>
+                <p class="onsale_text"><%=v %></p>
+                <% }) %>
+                <% } %>
+            <div class="corp_box_wrap">
+				<div class="corp_box">
+                    <% if(!_.isEmpty(data.detailInfo.departName)) { %><span class="start_city"><%=data.detailInfo.departName %>出发</span><% } %>
+					<span class="corp"><%=data.detailInfo.vendor %></span>
+					<span class="number">编号:<%=data.detailInfo.pId %></span>
+				</div>
+			</div>
+	    </div>
+	    <div class="recommend_wrap">
+            <% if(data.detailInfo.recommends) { %>
+		    <div class="recommend_detail">
+			    <div class="recommend_txt">
+				    <h3>产品经理推荐</h3>
+				    <ul>
+                        <% _.each(data.detailInfo.recommends, function (v, k) { %>
+					    <li <% if(k > 2) { %>="" class="js_more_Content" style="display:none" <% } %>=""><%=v.desc %> <% if(v.url) { %><a href="<%=v.url %>" target="_blank">查看更多&gt;&gt;</a><% } %></li>
+                        <% }) %>
+				    </ul>
+                    <% if(data.detailInfo.recommends.length > 3) { %><div class="more_text"><a class="js_more_Content_btn" href="javascript:void(0);">更多</a></div><% } %>
+			    </div>
+		    </div>
+            <% } %>
+
+            <% var isCost = _.every(_.pluck(data.detailInfo.costs, "descs"), function(key) { return key == '' }) %>
+			<% if(!isCost) { %>
+            <div class="recommend_detail">
+                <div class="recommend_txt">
+                    <h3>费用说明</h3>
+                    <ul>
+                        <% _.each(data.detailInfo.costs, function (v, k) { %>
+                            <% if(v.descs.length > 0) { %>
+                                <% _.each(v.descs, function (m, n) { %>
+					                <li><%=m %></li>
+                                <% }) %>
+                            <% } %>
+                        <% }) %>
+				    </ul>
+                </div>
+            </div>
+            <% } %>
+		    <ul class="more_info">
+                <% if(productType==="") { %>  
+                    <li class="btn_active"><a href="/webapp/tour/booking_step1">出发班期与价格日历</a></li>
+                <%}%>
+                <% if(data.detailInfo.isCashBack) { %><li class="btn_active"><a href="#detail.return.cash">返现说明</a></li><% } %>
+			    <li class="btn_active"><a href="/webapp/tour/detail_booking_note">预订须知</a></li>
+			    <% if(_.indexOf([11,12,26,34], data.detailInfo.pCategoryId) >=0) { %><li class="btn_active"><a href="/webapp/tour/detail_visa">签证/签注</a></li><% } %>
+                <% if(productType==="") { %>  
+			        <% if(data.qaNum > 0) { %><li class="detail_question btn_active"><a><span><%=data.qaNum %>条</span>咨询问答</a></li><% } %>
+                <%}%>
+		    </ul>
+	    </div>
+	    <% if(!data.isBook) { %><div class="product_offline_notice">此产品暂不支持在线预订</div><%} %>
+    <%} %>
+    </div>
+
+    <div class="route_box js_tab_showbox" style="display: none;">
+    </div>
+
+    <div class="score_box js_tab_showbox" style="display: none;">
+    </div>
+</div>
+
+<% if(productType==="") { %>  
+    <% if(data.isBook) { %>
+        <% if(data.detailInfo.isTel) { %>
+        <footer class="book_now_double"><a class="telphone_ask_btn js_telphone_btn" href="javascript:void(0);">电话咨询</a><a class="book_now_btn js_in_Footer" href="javascript:void(0);">开始预订</a></footer>
+        <% } else { %>
+        <footer class="book_now js_in_Footer"><a href="javascript:void(0);">开始预订</a></footer>
+        <%} %>
+    <% } else { %>
+        <footer class="book_now"><a href="javascript:void(0);" class="js_telphone_btn">拨打免费服务电话</a></footer>
+    <%} %>
+<%}else{ %>
+    
+    <% if(secKillSetting.cskillStatus === "noStarted") {%>
+        <footer class="book_now seckill_disable js_dListime"><%= secKillSetting.lastTime.month%>月<%= secKillSetting.lastTime.date%>日开抢</footer>
+    <%} else if(secKillSetting.cskillStatus === "upcomingStart") {%>
+        <footer class="book_now seckill_disable js_dListime">即将开始&nbsp;<%= secKillSetting.lastTime.hour %>:<%= secKillSetting.lastTime.minute %>:<%= secKillSetting.lastTime.second %></footer>
+    <%} else if(secKillSetting.cskillStatus === "start") {%>
+        <% if(cskillData.Inventory != 0) {%>
+            <footer class="book_now js_in_Footer js_dListime"><a href="javascript:;">立即抢购</a></footer>
+        <% } else { %>
+            <footer class="book_now seckill_disable js_dListime">抢光了</footer>
+        <% } %>
+    <%} else {%>
+        <footer class="book_now seckill_disable js_dListime">抢光了</footer>
+    <%}%>
+
+<%} %>
+
+
+
+;
+    </script>
+	<script id="detail_route_tab" type="text/lizard-template">        
+       <div class="route_detail mg_btm60" <%if(data.singlePage){%>="" style="margin-left:20px;margin-top:10px;margin-right:10px" <%}%>="">
+<%var traffic=['','flight','bus','train','ship','car']; %>
+<%var activeType=['餐饮','酒店','航班','景点','购物','自费项目','全天自由活动','自由活动','交通', '其它']; %>
+<%var dinner=['','早餐','午餐','晚餐'] %>
+<%_.each(data.intros,function(v,k){ %>
+    <h2 class="route_day"><span>D<%=v.fewDay %></span><%=v.desc.split('_')[0] %><%if(!!v.trafficType && v.desc.split('_')[1]){ %><i class="<%=traffic[v.trafficType] %>"></i><%=v.desc.split('_')[1] %><%} %>&nbsp;</h2>
+    <%_.each(v.dailys,function(w,l){ %>
+        <% if(!!w.departTimePre.trim() || !!w.departTime.trim()){%>
+        <h3 class="route_time"><% if(!!w.departTimePre.trim()){%><%=w.departTimePre %> <%} %><%if(!!w.departTime.trim()){ %><%=w.departTime %><%} %></h3>
+        <%} %>
+        <ul class="route_list">
+        <%_.each(w.scenics, function(scenicsNode,scenicsIndex){ %>
+        <li class="scenics">
+			<h4>前往景点:</h4>
+			<div class="content"><%=scenicsNode.name %></div>
+		</li>
+        <%if(scenicsNode.takeTime){ %>
+        <li class="scenicstime">
+			<h4>活动时间:</h4>
+			<div class="content"><%=scenicsNode.takeTime %></div>
+		</li>
+        <%} %>
+        <li>
+			<div class="scenic_spot"><%=scenicsNode.desc %></div>
+			<div class="scenic_img">
+            <%_.each(scenicsNode.imgs,function(scencsImage,ImageIndex){ %>
+                <%_.each(scencsImage.imgUrls,function(imgUrl,ImageUrlIndex){ %>
+                <a href="<%=imgUrl.value %>"><img src="<%=imgUrl.value  %>" alt="<%=scencsImage.imgName %>" data-key="<%=imgUrl.key %>"></a>
+                <%}) %>
+            <%}) %>	
+			</div>  				
+		</li>
+        <%}) %>
+        <%if(w.hotelNames && w.hotelNames.length){ %>
+        <li class="hotels">
+			<h4>入住酒店:</h4>
+			<div class="content"><%_.each(w.hotelNames,function(hotel,hotelIndex){ %><%if(!!hotelIndex){%> 或 <%} %><%=hotel %><%}) %></div>
+		</li>
+        <%} %>
+		<li>
+			<% if(w.activeType!=9 && w.activeType!=3){%><h4><%=activeType[w.activeType] %>:</h4><%} %>
+			<div class="content"><%=w.desc %></div>
+		</li>
+        <%if(!!w.distance){ %>
+        <li class="distance">
+			<h4>行驶距离:</h4>
+			<div class="content">约<%=w.distance %>公里</div>
+		</li>
+        <%} %>
+        <%if(w.driveTime!='0/0'){ %>
+        <li class="drivertime">
+			<h4>行驶时间:</h4>
+			<div class="content">约<%=w.driveTime.split('/')[0] %>小时<%=w.driveTime.split('/')[1] %>分</div>
+		</li>
+        <%} %>
+
+        <%if(w.dinnerInfo && w.dinnerInfo.desc){ %>
+        <li class="dinner">
+			<h4><%=dinner[w.dinnerInfo.dinnerType] %>:</h4>
+			<div class="content"><%=w.dinnerInfo.desc %></div>
+		</li>
+        <%} %>
+        <%if(w.saleProduct){ %>
+        <li class="saleproduct">
+			<h4>营业产品:</h4>
+			<div class="content"><%=w.saleProduct %></div>
+		</li>
+        <%} %>
+        <%if(w.referPrice && parseInt(w.referPrice)){ %>
+        <li class="referprice">
+			<h4>参考价格:</h4>
+			<div class="content"><%=w.referPrice %></div>
+		</li>
+        <%} %>
+        <%if(w.takeTime){ %>
+        <li class="taketime">
+			<h4>占用时间:</h4>
+            <div class="content">约<%=w.takeTime.split('/')[0] %>小时<%=w.takeTime.split('/')[1] %>分</div>
+		</li>
+        <%} %>
+	</ul>
+    <%}) %>
+<%}) %>
+</div>
+    </script>
+	<script id="detail_score_tab" type="text/lizard-template">        
+       	<div class="mg_btm60" style="margin-bottom:60px">
+		<%if(data.pComment){ %>
+		<div class="total_score">
+			<div class="score_people"><%=data.commentPerson %>人点评</div>
+			<ul class="score_ico star_<%=parseInt(data.pComment.tScore) %><%if(data.pComment.tScore%1>0){%>_half<%} %>">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<span class="score_num"><%=data.pComment.tScore.toFixed(1) %></span>
+		</div>
+		<ul class="score_detail">
+		<%_.each(data.pComment.comments,function(v,k){ %>
+			<li class="detail_wrap">
+				<div class="name_wrap">
+					<span class="date"><%=v.cDate %></span>
+					<span class="name">***<%=v.uName.substr(3,3) %></span>
+				</div>
+				<div class="score_ico_wrap">
+					<ul class="score_ico star_<%=v.grade %>">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<span class="score_num"><%=v.grade %></span>
+				</div>
+				<dl class="score_txt">
+					<dt><%=v.title %></dt>
+					<dd><%=v.content %></dd>
+				</dl>
+			</li>
+		<%}) %>
+		</ul>
+		<%} %>
+		<div class="no_more" style="display:none;">没有更多内容了</div>
+		<div class="base_loading" style="display:none;"><i></i>加载中</div>
+		<div class="no_comment" <%if(data.pComment){ %>="" style="display:none;" <%} %>="">暂无点评</div>
+	</div>
+    </script>
+    <input type="hidden" id="page_id">
+<script type="text/javascript">
+var __SERVERDATE__ = {server:new Date(Date.parse('2014/6/5 16:28:45'.replace(/-/g,'/'))),local: new Date()}
+</script>
+
+<script type="text/javascript" src="../lizard/webresource.c-ctrip.com/code/lizard/2.0/web/lizard.seed.js" pdconfig="172.16.140.161/html5/tour/webresource/tour/tourConfig.js"></script>
+
+
+</body>
+</html>

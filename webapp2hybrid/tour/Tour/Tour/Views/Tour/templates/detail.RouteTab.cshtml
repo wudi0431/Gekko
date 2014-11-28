@@ -1,0 +1,84 @@
+﻿<div class="route_detail mg_btm60" <%if(data.singlePage){%>style="margin-left:20px;margin-top:10px;margin-right:10px"<%}%>>
+<%var traffic=['','flight','bus','train','ship','car']; %>
+<%var activeType=['餐饮','酒店','航班','景点','购物','自费项目','全天自由活动','自由活动','交通', '其它']; %>
+<%var dinner=['','早餐','午餐','晚餐'] %>
+<%_.each(data.intros,function(v,k){ %>
+    <h2 class="route_day"><span>D<%=v.fewDay %></span><%=v.desc.split('_')[0] %><%if(!!v.trafficType && v.desc.split('_')[1]){ %><i class="<%=traffic[v.trafficType] %>"></i><%=v.desc.split('_')[1] %><%} %>&nbsp;</h2>
+    <%_.each(v.dailys,function(w,l){ %>
+        <% if(!!w.departTimePre.trim() || !!w.departTime.trim()){%>
+        <h3 class="route_time"><% if(!!w.departTimePre.trim()){%><%=w.departTimePre %> <%} %><%if(!!w.departTime.trim()){ %><%=w.departTime %><%} %></h3>
+        <%} %>
+        <ul class="route_list">
+        <%_.each(w.scenics, function(scenicsNode,scenicsIndex){ %>
+        <li class="scenics">
+			<h4>前往景点:</h4>
+			<div class="content"><%=scenicsNode.name %></div>
+		</li>
+        <%if(scenicsNode.takeTime){ %>
+        <li class="scenicstime">
+			<h4>活动时间:</h4>
+			<div class="content"><%=scenicsNode.takeTime %></div>
+		</li>
+        <%} %>
+        <li>
+			<div class="scenic_spot"><%=scenicsNode.desc %></div>
+			<div class="scenic_img">
+            <%_.each(scenicsNode.imgs,function(scencsImage,ImageIndex){ %>
+                <%_.each(scencsImage.imgUrls,function(imgUrl,ImageUrlIndex){ %>
+                <a href="<%=imgUrl.value %>"><img src="<%=imgUrl.value  %>" alt="<%=scencsImage.imgName %>" data-key="<%=imgUrl.key %>"></a>
+                <%}) %>
+            <%}) %>	
+			</div>  				
+		</li>
+        <%}) %>
+        <%if(w.hotelNames && w.hotelNames.length){ %>
+        <li class="hotels">
+			<h4>入住酒店:</h4>
+			<div class="content"><%_.each(w.hotelNames,function(hotel,hotelIndex){ %><%if(!!hotelIndex){%> 或 <%} %><%=hotel %><%}) %></div>
+		</li>
+        <%} %>
+		<li>
+			<% if(w.activeType!=9 && w.activeType!=3){%><h4><%=activeType[w.activeType] %>:</h4><%} %>
+			<div class="content"><%=w.desc %></div>
+		</li>
+        <%if(!!w.distance){ %>
+        <li class="distance">
+			<h4>行驶距离:</h4>
+			<div class="content">约<%=w.distance %>公里</div>
+		</li>
+        <%} %>
+        <%if(w.driveTime!='0/0'){ %>
+        <li class="drivertime">
+			<h4>行驶时间:</h4>
+			<div class="content">约<%=w.driveTime.split('/')[0] %>小时<%=w.driveTime.split('/')[1] %>分</div>
+		</li>
+        <%} %>
+
+        <%if(w.dinnerInfo && w.dinnerInfo.desc){ %>
+        <li class="dinner">
+			<h4><%=dinner[w.dinnerInfo.dinnerType] %>:</h4>
+			<div class="content"><%=w.dinnerInfo.desc %></div>
+		</li>
+        <%} %>
+        <%if(w.saleProduct){ %>
+        <li class="saleproduct">
+			<h4>营业产品:</h4>
+			<div class="content"><%=w.saleProduct %></div>
+		</li>
+        <%} %>
+        <%if(w.referPrice && parseInt(w.referPrice)){ %>
+        <li class="referprice">
+			<h4>参考价格:</h4>
+			<div class="content"><%=w.referPrice %></div>
+		</li>
+        <%} %>
+        <%if(w.takeTime){ %>
+        <li class="taketime">
+			<h4>占用时间:</h4>
+            <div class="content">约<%=w.takeTime.split('/')[0] %>小时<%=w.takeTime.split('/')[1] %>分</div>
+		</li>
+        <%} %>
+	</ul>
+    <%}) %>
+<%}) %>
+</div>

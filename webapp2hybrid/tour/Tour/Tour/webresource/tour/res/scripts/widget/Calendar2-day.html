@@ -1,0 +1,22 @@
+<td
+    <% if(data.isThisMonth){ %>
+    class="js-calendar-day <%= data.available ? 'on' : '' %> <%= data.selected ? 'selected' : '' %>"
+    data-day="<%= data.dayIndexInWeek %>" data-date="<%= data.day.getDate() %>" data-available="<%= data.available ? true : false %>"
+    <% } %>
+    >
+    <% if(data.isThisMonth){ %>
+    <%= data.description ? data.description : data.day.getDate() %>
+    <% if(data.havePrice){ %>
+    <span class="cld_price">
+        <% if(data.strPrice){ %>
+        <%= data.strPrice %>
+        <% } else { %>
+        <dfn>&yen;</dfn><%= data.price %>起
+        <% } %>
+    </span>
+    <% } %>
+    <% if(data.isGroup){ %>
+    <i class="group"></i>
+    <% } %>
+    <% } %>
+</td>

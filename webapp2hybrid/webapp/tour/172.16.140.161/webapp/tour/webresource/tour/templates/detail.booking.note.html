@@ -1,0 +1,23 @@
+<div class="pure_txt_wrap">
+    <h2><%=contractDesc %></h2>
+    <% if(knows) { %>
+    <% _.each(knows, function (v, k) { %>
+        <% if(v.descs) { %>
+            <h2><%=v.title %></h2>
+            <% _.each(v.descs, function (m, n) { %>
+            <div><%=m.detail %></div>
+            <% }) %>
+        <% } %>
+    <% }) %>
+    <% } %>
+    <% if(safety) { %>
+        <h2>安全指南</h2>
+        <div><%=safety %><% if(safetyUrl) { %><a href="<%=safetyUrl %>">查看详情</a><% } %></div>
+    <% } %>
+    <% if(pays) { %>
+        <% _.each(pays, function (v, k) { %>
+            <h2><%=v.type %></h2>
+            <div><%=v.desc %></div>
+        <% }) %>
+    <% } %>
+</div>

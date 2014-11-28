@@ -1,0 +1,32 @@
+﻿@charset "utf-8";
+/*== 酒店 ==*/
+.htl_item { padding:0 0 0 10px; background:#fff; border-top:#e2e2e2 1px solid; border-bottom:#e2e2e2 1px solid; position:relative}
+.htl_item .pic {position:absolute;right:10px;top:10px;width:60px; z-index:1}
+.htl_item .pic img,.htl_item .pic .pic_touch {position:relative}
+.htl_item .pic img {width:60px;height:60px;display:block;z-index:0;}
+.htl_item .pic .pic_touch {background:rgba(0,0,0,.7);color:#fff;text-align:right;display:block;padding-right:4px;margin-top:-22px;line-height:22px;z-index:1;}
+.htl_item h4 {margin:0 20px;}
+.htl_item_list{ position:relative; z-index:0}
+.htl_item_list li {border-top:#e2e2e2 1px solid;line-height:22px;position:relative;padding:10px 5px 10px 0; margin-left:25px;} 
+.htl_item_list li.no_arrow:after{ display:none}
+.htl_item_list li:first-child {border-top:0 none}
+.htl_item_list li:last-child { padding-right:80px;}
+.htl_item_list li:nth-child(1):before,.htl_item_list li:nth-child(2):before,.htl_item_list li:nth-child(3):before {content:"";width:20px;height:20px;position:absolute;left:-25px;top:6px;}
+.htl_item_list li:nth-child(1),.htl_item_list li:nth-child(2) {margin-right:80px;}
+.htl_item_list li:nth-child(2) {border-top-style:dotted}
+.htl_item_list li:nth-child(1):before {background-position:0 -20px; top:8px}
+.htl_item_list li:nth-child(2):before {background-position:-20px -20px; top:8px}
+.htl_item_list li:nth-child(3):before {background-position:-40px -20px;}
+.htl_item_list li:last-child:after { right:10px;}
+.htl_item_list .form_to{ font-size:10px; color:#999;height: 14px; line-height:14px;}
+.htl_item_list .a_map {position:absolute;top:50%;margin-top:-16px;right:10px;color:#1ca3ce; line-height:32px; padding:0 25px 0 10px}
+.form_to,.tag_box{ margin-top:-4px}
+.tag_box {height:14px; line-height:14px;}
+.tag_box i { zoom:0.7}
+.more_link {text-align:right;}
+.a_server ,.a_server_on {color:#1ca3ce; position:relative; padding-right:15px}
+.a_server:after ,.a_server_on:after { border-top-color:#1ca3ce; border-left-color:#1ca3ce; right:0; }
+.a_server:after {-moz-transform:rotate(-135deg);-webkit-transform:rotate(-135deg);-o-transform:rotate(-135deg);-ms-transform:rotate(-135deg);transform:rotate(-135deg); margin-top:-6px;}
+.a_server_on:after {-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg);-o-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg); margin-top:-2px;}
+.htl_item_list li.take_arrow:after {right:15px;}
+

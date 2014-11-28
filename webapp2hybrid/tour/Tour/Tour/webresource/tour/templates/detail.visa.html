@@ -1,0 +1,24 @@
+<div class="visa_wrap">
+    <% if(!_.isEmpty(descs) || !_.isEmpty(agencyDetails)) { %>
+        <ul class="visa_list">
+            <% if(!_.isEmpty(descs)) { %>
+            <li class="js_visa_detail btn_active" data-type="visanotice"><a href="javascript:void(0);"><%=note %></a></li>
+            <% } %>
+            <% if(!_.isEmpty(agencyDetails)) { %>
+            <li class="js_visa_detail btn_active" data-type="visagency"><a href="javascript:void(0);"><%=agency %></a></li>
+            <% } %>
+        </ul>
+    <% } %>
+    <% _.each(coutrys, function (v, k) { %>
+        <% if(v.cTypes) { %>
+            <h3><%=v.rName %></h3>
+            <ul class="visa_list">
+            <% _.each(v.cTypes, function (m, n) { %>
+                <li class="js_visa_detail btn_active" data-type="visaservice-<%=k %>-<%=n %>">
+                    <a href="javascript:void(0);"><%=m.name %></a>
+                </li>
+            <% }) %>
+            </ul>
+        <% } %>
+    <% }) %>
+</div>

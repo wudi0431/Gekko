@@ -1,0 +1,42 @@
+﻿	<div class="mg_btm60" style="margin-bottom:60px">
+		<%if(data.pComment){ %>
+		<div class="total_score">
+			<div class="score_people"><%=data.commentPerson %>人点评</div>
+			<ul class="score_ico star_<%=parseInt(data.pComment.tScore) %><%if(data.pComment.tScore%1>0){%>_half<%} %>">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<span class="score_num"><%=data.pComment.tScore.toFixed(1) %></span>
+		</div>
+		<ul class="score_detail">
+		<%_.each(data.pComment.comments,function(v,k){ %>
+			<li class="detail_wrap">
+				<div class="name_wrap">
+					<span class="date"><%=v.cDate %></span>
+					<span class="name">***<%=v.uName.substr(3,3) %></span>
+				</div>
+				<div class="score_ico_wrap">
+					<ul class="score_ico star_<%=v.grade %>">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<span class="score_num"><%=v.grade %></span>
+				</div>
+				<dl class="score_txt">
+					<dt><%=v.title %></dt>
+					<dd><%=v.content %></dd>
+				</dl>
+			</li>
+		<%}) %>
+		</ul>
+		<%} %>
+		<div class="no_more" style="display:none;">没有更多内容了</div>
+		<div class="base_loading" style="display:none;"><i></i>加载中</div>
+		<div class="no_comment" <%if(data.pComment){ %>style="display:none;"<%} %>>暂无点评</div>
+	</div>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=320.1, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script type="text/javascript">
+        window.BEGINTIME = new Date().getTime();
+    </script>
+    <link rel="stylesheet" type="text/css" href="http://webresource.c-ctrip.com/styles/h5/common/main.css?v=1">
+    <link rel="stylesheet" type="text/css" href="res/css/public_flights_logo.css?v=1">
+    <link rel="stylesheet" type="text/css" href="res/css/taocan_v_60.css?v=1">
+    <link id="c-diyfhx-link-order" rel="stylesheet" type="text/css" href="res/css/order.css?v=1">
+    <script type="text/javascript" language="javascript">
+        var linkSdp = document.createElement("link");
+        linkSdp.type = "text/css";
+        linkSdp.rel = "stylesheet";
+        linkSdp.href = "res/css/sdp.css?v=1";
+        var linkDp = document.createElement("link");
+        linkDp.type = "text/css";
+        linkDp.rel = "stylesheet";
+        linkDp.href = "res/css/flt_htl.css?v=1";
+        var linkOrder = document.getElementById("c-diyfhx-link-order");
+        var onhashchange = function (e) {
+            if (/#dp\//.test(window.location.hash)) {
+                if (linkSdp.parentNode == document.head) {
+                    linkSdp.parentNode.removeChild(linkSdp);
+                }
+                document.head.insertBefore(linkDp, linkOrder);
+            }
+            else if (/#order.detail.fhx\?/.test(window.location.hash)) {
+                if (linkSdp.parentNode == document.head) {
+                    linkSdp.parentNode.removeChild(linkSdp);
+                }
+                document.head.insertBefore(linkDp, linkOrder);
+            }
+            else {
+                if (linkDp.parentNode == document.head) {
+                    linkDp.parentNode.removeChild(linkDp);
+                }
+                document.head.insertBefore(linkSdp, linkOrder);
+            }
+        };
+        window.addEventListener("hashchange", onhashchange);
+        onhashchange();
+    </script>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://pic.c-ctrip.com/h5/common/57.png?v=1">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://pic.c-ctrip.com/h5/common/72.png?v=1">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://pic.c-ctrip.com/h5/common/114.png?v=1">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://pic.c-ctrip.com/h5/common/144.png?v=1">
+    <link rel="apple-touch-startup-image" href="http://pic.c-ctrip.com/h5/common/640.png?v=1" sizes="320x460" media="screen and (max-device-width: 320)">
+    <link rel="apple-touch-startup-image" href="http://pic.c-ctrip.com/h5/common/940.png?v=1" sizes="640x920" media="screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)">
+    <link rel="apple-touch-startup-image" href="http://pic.c-ctrip.com/h5/common/1004.png?v=1" sizes="768x1004" media="screen and (min-device-width: 481px) and (orientation:portrait)">
+</head>
+<body onselectstart="return false">
+    <div id="main">
+    </div>
+    <input type="hidden" id="page_id" value="wait">
+    <input type="hidden" id="bf_ubt_orderid" value="">
+    <!-- 暂时干掉sockjs内容 -->
+    <!--<script type="text/javascript" src="../res/libs/sockjs-0.3.min.js"></script>-->
+    <!--<script type="text/javascript" src="../res/libs/console.js"></script>-->
+   <script type="text/javascript" src="../res/libs/bridge.js?v=1"></script>
+    <script type="text/javascript" src="../res/libs/require.min.js?v=1"></script>
+    <script type="text/javascript" src="../res/libs/libs.js?v=1"></script>
+    <script type="text/javascript" src="../res/libs/mubt.min.js?v=1"></script>
+    <script type="text/javascript" src="../app/1.1/hybrid/common.js?v=1"></script>
+    <script type="text/javascript" src="./main.js?v=1"></script>
+    <img src="http://pic.c-ctrip.com/h5/taocan/flt_htl_v58/pic_none.png?v=1" style="display: none">
+</body>
+</html>

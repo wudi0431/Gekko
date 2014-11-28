@@ -1,0 +1,57 @@
+﻿@using System.Configuration
+
+<!DOCTYPE html>
+<html>
+<head>
+    @RenderPage("../Shared/Header.cshtml")
+</head>
+<body class="gray" onselectstart="return false">
+    @RenderPage("../Shared/BodyLayout.cshtml")
+
+    <script type="text/lizard-config">
+        {
+            "url_schema": "detail/{pid}/{scid}/{dcid}/{from}",
+            "model": {
+                "apis":[{
+                    url:'http://m.ctrip.com/restapi/vacationapi/product/productdetail',
+                    postdata:{"pId":Lizard.P("pid"),"scId":Lizard.P("scid"),"dcId":Lizard.P("dcid"),"reqType":[1],"head":{"cid":"a64ac7fd-203a-83bd-5e99-6bb4d594171b","ctok":"351858059049938","cver":"1.0","lang":"01","sid":"8888","syscode":"09","auth":""}}
+                }],
+                "filter":function (datas){
+                    var ret = {data:datas[0].data, productType: ''};
+                    return ret;
+                },
+				setTDK: function(datas)		
+                {
+				    var detailData = datas[0].data;
+				    return {title: detailData.pName, description: detailData.title, keywords: detailData.pName}
+                }				
+            },
+            "view":{
+                "header": Lizard.T("headTmpl"),
+                "viewport": Lizard.T("detail_tab")
+            },
+            "controller": "@ConfigurationManager.AppSettings["WebresourcePDBaseUrl"]tour/controllers/detail.js"
+        }
+    </script>
+
+    <script id="headTmpl" type="text/lizard-template">
+        <h1>产品详情</h1>
+    </script>
+
+    <script id="detail_tab" type="text/lizard-template">        
+       @RenderPage("templates/detail.cshtml");
+    </script>
+	<script id="detail_route_tab" type="text/lizard-template">        
+       @RenderPage("templates/detail.RouteTab.cshtml")
+    </script>
+	<script id="detail_score_tab" type="text/lizard-template">        
+       @RenderPage("templates/detail.ScoreTab.cshtml")
+    </script>
+    @RenderPage("../Shared/Footer.cshtml")
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,53 @@
+﻿<div class="body">
+    <div class="banner_box" id="js_detail_pic_slide">
+        <div class="cui-sliderContainer" style="width: <%=data.picWidth%>px; position: relative; height: <%=data.picHeight%>px;">
+            <div class="cui-imageContainer" style="width: 100%;">
+                <div class="image-node slider-imageContainerNode" style="position: absolute; left: 0px;">
+                    <img style="width: <%=data.picWidth%>px; height: <%=data.picHeight%>px" src="http://pic.c-ctrip.com/vacation_v2/h5/group_travel/pic_none.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="detail_tab">
+        <li class="current">概要</li>
+        <li>&nbsp;&nbsp;行程</li>
+        <li>&nbsp;&nbsp;点评</li>
+    </ul>
+    <div class="profile_box js_tab_showbox">
+        <div class="product_wrap">
+            <h2></h2>
+            <div class="price_box">
+                <p class="price"></p>
+            </div>
+            <div class="corp_box_wrap">
+                <div class="corp_box">
+                    <span class="start_city"></span>
+                    <span class="number">编号:<%=data.pid %></span>
+                </div>
+            </div>
+        </div>
+        <div class="recommend_wrap">
+            <div class="recommend_detail">
+                <div class="recommend_txt">
+                    <h3>产品经理推荐</h3>
+                </div>
+            </div>
+            <div class="recommend_detail">
+                <div class="recommend_txt">
+                    <h3>费用说明</h3>
+                </div>
+            </div>
+            <ul class="more_info">
+                <li class="btn_active"><a href="#booking.step1">出发班期与价格日历</a></li>
+                <li class="btn_active"><a href="#detail.booking.note">预订须知</a></li>
+                <li class="btn_active"><a href="#detail.visa">签证/签注</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="route_box js_tab_showbox" style="display: none;">
+    </div>
+    <div class="score_box js_tab_showbox" style="display: none;">
+    </div>
+</div>
+<footer class="book_now js_in_Footer">
+    <a href="javascript:void(0);">开始预订</a></footer>

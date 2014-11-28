@@ -1,0 +1,273 @@
+﻿@using System.Configuration
+
+<!DOCTYPE html>
+<html>
+<head>
+    @RenderPage("../Shared/Header.cshtml")
+</head>
+<body class="gray" onselectstart="return false">
+    @RenderPage("../Shared/BodyLayout.cshtml")
+    <!--tour/index.html#vacationslist?salecity=2&scity=2&sname=上海&kwd=三亚&type=1&from=nopage -->
+    <script type="text/lizard-config">
+        {
+            "url_schema": "/vacationlist/{salecity}/{scity}/{sname}/{kwd}/{type}/{nopage}",
+            "model": {
+                "apis":[{
+                    runat:"server",
+                    url:'http://m.ctrip.com/restapi/vacationapi/product/productsearch',
+                    postdata:{"saleCity":Lizard.P("salecity"),
+                              "startCity":0,
+                              "key":(Lizard.P("kwd") == "周边" ? "mobi" : Lizard.P("kwd")) || "三亚",
+                              "selectorId":0,
+                              "line":parseInt(Lizard.P("type"))||1,
+                              "start":parseInt(Lizard.P("startpos"))||"0",
+                              "count":26,
+                              "filterLabels":Lizard.P("filterlabels")?JSON.parse(Lizard.P("filterlabels"))["filterlabels"]:[],
+                              "isSale":0,
+                              "isPromo":0,
+                              "orderType":0
+                    }
+                }],
+                "filter":function (datas){
+                    var ret = {data:datas[0].data};
+                    var TourType = ['', 'vDepart', 'vDestino', 'vLocal'];
+                    var tabStatistics = { vLocal: 0, vDepart: 0, vDestino: 0, tabs: 0 };
+
+                    vStoreData = { vLocal: {}, vDepart: {}, vDestino: {} };
+                   
+                    if (ret.data.tabStatistics) {
+                        var _tabStatistics = ret.data.tabStatistics;
+                        for (var i = 0, lens = _tabStatistics.length; i < lens; i++) {
+                            var _value = _tabStatistics[i].value;
+                            if (!!_value) {
+                                 tabStatistics[TourType[_tabStatistics[i].key]] = _tabStatistics[i].value;
+                                 tabStatistics.tabs += 1;
+                            }
+                        }
+                    }else{
+                        tabStatistics = JSON.parse(localStorage.getItem("P_VACATIONS_TABSTATISTICS"));
+                    }
+                            
+                    
+                    linetype = (!!Lizard.P('type') && !isNaN(Lizard.P('type')) ? Lizard.P('type') : 1) || 1;
+                    //如果linetype大于4或者小于1，则默认设为1 当等于4时，改为3，为了配合语音接口
+                    if (linetype - 1 + 1 == 4) { linetype = 3; } else if (linetype - 1 + 1 > 4 || linetype - 1 + 1 < 1) { linetype = 1; }
+
+                    ret.data.tabStatistics = tabStatistics;
+                    ret.data.linetype = linetype;
+                    
+                    var tempFilterLabels = Lizard.P("filterlabels")?JSON.parse(Lizard.P("filterlabels"))["filterlabels"]:false;
+                    var tempDSName = '目的地';
+                    if(tempFilterLabels){
+                        for(var i=0,l=tempFilterLabels.length; i<l; i++){
+                            if(tempFilterLabels[i]["lType"] == "B"){
+                                tempDSName = tempFilterLabels[i]["lText"];
+                                break;
+                            }
+                        }
+                    }
+                    ret.data.districtSelectedName = tempDSName;
+                    ret.data.sortType = 0;
+                   
+                    currTourType = TourType[linetype];
+                    vStoreData[currTourType] = ret.data;
+                    return ret;
+                }
+            },
+            "view":{
+                "header": Lizard.T("headTmpl"),
+                "viewport": Lizard.T("viewportTmpl")
+            },
+            "controller": "@ConfigurationManager.AppSettings["WebresourcePDBaseUrl"]tour/controllers/vacationlist.js"
+        }
+    </script>
+
+    <script id="headTmpl" type="text/lizard-template">
+        <div>
+            <h1 class="list"><%=Lizard.P('sname')%> - <%=Lizard.P('kwd')%><span class="sum">共<%=data.tCount%>条</span></h1>
+        </div>
+    </script>
+
+    <script id="viewportTmpl" type="text/lizard-template">
+        <div id="vacationslistTemplate" data-id="multi_template">
+            <div class="register_pro content_list" style="padding:0px">
+                <%var tabStatistics=data.tabStatistics;%>
+                <%if(!!tabStatistics && !!tabStatistics.tabs){ %>
+                <nav class="tpye_tab">
+                    <%if(!!data.isInApp){ %>style="top:0"<%} %>
+                    <%var tabClass=['','vDepart','vDestino','vLocal'],tabName=['', '出发地参团','目的地参团','一日游'], tabSort=[1,2,3]; %>
+                    <%_.each(tabSort,function(v,k){ %>
+                    <%if(!!tabStatistics[tabClass[v]]){ %>
+                    <li class="<%=tabClass[v] %> <% if(data.linetype==v){ %>on<% } %>" data-linetype="<%=v %>"<%if(!!tabStatistics.tabs && tabStatistics.tabs<3){ %>style="width:<%=100/tabStatistics.tabs %>%"<%} %>>
+                        <!--for seo link-->
+                        <a lizard-catch="off" href='@Url.Content("~/")vacationlist/<%=Lizard.P('salecity')%>/<%=Lizard.P('scity')%>/<%=Lizard.P('sname')%>/<%=Lizard.P('kwd')%>/<%=v%>/<%=Lizard.P('nopage')%>' data-linetype="<%=v %>"><%=tabName[v] %></a>
+                     </li>
+                    <%} %>
+                    <%}) %>
+                </nav>
+                <%} %>
+                <!--<div class="scrollproduct" style="overflow:hidden;height:<%=data.scrollproductHeight %>px;">-->
+                <div class="product_list_box" style="padding-top:42px">
+                    <div class="product_list">
+                        <%var promotion=['','立减','早订优惠','多人立减','贵宾专享']; %>
+                        <%_.each(data.products, function(v,k){%>
+                        <ul class="hot_list_tab btn_active" data-pid="<%=v.pId %>">
+                            <!--for seo link-->
+                            <a href='@Url.Content("~/")Detail/<%=v.pId %>/<%=Lizard.P("salecity")%>/<%=Lizard.P("scity")%>/nopage' target="_blank">
+                                <li class="hot_img">
+                                    <img width=" 142px" height="80px" src="<% if(v.img && !!v.img.trim()){%><%=v.img%><%}else{ %>http://pic.c-ctrip.com/vacation_v2/h5/group_travel/no_product_pic.png<%} %>">
+                               </li>
+                                <li class="hot_vacation">
+                                    <%if(v.isPromo){ %><i class="benefit">惠</i><%} %>
+                                    <div class="ellipsis"><p class="xname"><%=v.title%></p></div>
+                                    <div class="price_wrap">
+                                        <div class="pices">
+                                            <%if(!!v.price){ %>
+                                            <dfn>¥</dfn>
+                                            <span><%=v.price%></span>
+                                            起
+                                            <%}else{ %>
+                                            <span class="font14">实时计价</span>
+                                            <%} %>
+                                        </div>
+                                        <%if(v.level && v.level>1){ %><i class="diamond diamond_<%=v.level %>"></i><%} %>
+                                    </div>
+                                    <div class="other">
+                                        <%if(!!v.score){ %><p class="score"><span><%=v.score.toFixed(1) %></span>分</p><%} %>
+                                        <%if(!!v.departCName && v.departCId!=data.sCityId){ %><span class="city"><%=v.departCName %>出发</span><%} %>
+                                        <div class="float_right">
+                                            <%if(v.isCashBack){ %><i class="orange"><dfn>返</dfn><%if(v.cashBackAmount && !isNaN(v.cashBackAmount)){ %><%=parseInt(v.cashBackAmount) %><%} %></i><%} %>
+                                            <%if(v.isWifi){ %><i class="wifi"></i><%} %>
+                                            <%if(!!v.specialTag && !!v.specialTag.trim()){ %> <i class="green"><%=v.specialTag %></i><%} %>
+                                        </div>
+                                    </div>
+                                </li>
+                            </a>
+                        </ul>
+                        <%})%>
+                    </div>
+                    <div class="no_more" style="display:none">没有更多结果了</div>
+                    <div class="base_loading" style="display:none"><i></i>加载中</div>
+                    <div runat="server">
+                        <%var startpos = parseInt(Lizard.P("startpos"))||0;%>
+                        <%var oncecount=26;%>
+                        <%var tempPos_prev = (startpos-oncecount)<0?0:(startpos-oncecount);%>
+                        <%var tempPos_next = startpos+oncecount;%>
+                        <a href='@Url.Content("~/")vacationlist/<%=Lizard.P("salecity")%>/<%=Lizard.P("scity")%>/<%=Lizard.P("sname")%>/<%=Lizard.P("kwd")%>/<%=Lizard.P("type")%>/<%=Lizard.P("nopage")%>?startpos=<%=tempPos_prev%>'>上一页</a>
+                        <a href='@Url.Content("~/")vacationlist/<%=Lizard.P("salecity")%>/<%=Lizard.P("scity")%>/<%=Lizard.P("sname")%>/<%=Lizard.P("kwd")%>/<%=Lizard.P("type")%>/<%=Lizard.P("nopage")%>?startpos=<%=tempPos_next%>'>下一页</a>
+                    </div>
+                    <div class="wireless_failure" style="display:none">
+                        <div class="no_wifi">
+                            <i class="wifi_ico"></i>
+                            <p>网络不给力，请稍后再试试吧</p>
+                            <a class="try_again" href="javascript:;">重试</a>
+                        </div>
+                        <div class="dial_service">
+                            <p>或者拨打携程客服电话</p>
+                            <a class="dial_btn" data-num="8008206666" href="tel:8008206666">联系客服</a>
+                        </div>
+                    </div>
+                    <div class="error"
+                        <%if(data.products) {%>style="display:none"<%} %>>
+                        <i class="error_ico"></i>
+                        <p>没有找到符合条件的结果，<br>请修改条件重新查询</p>
+                    </div>
+                </div>
+                <!--</div>-->
+                <div class="footer">
+                    <ul class="tab_list">
+                        <li class="districtsum">
+                            <span><%=data.districtSelectedName %></span><i class="icon_b icon_all_hui"></i>
+                            <div class="hide_div_b hidden districtlist">
+                                <div class="scroll_districtlist" style="max-height:338px;overflow:hidden">
+                                    <%if(data.districtSum){ %>
+                                    <div class="inner_wrap" style="height:auto;max-height:none">
+                                        <h4 class="area_title no_arrow" data-districtname="目的地" data-districtid="notset">全部<%if(data.districtSum.tCount){ %>(<%=data.districtSum.tCount %>)<%} %></h4>
+                                        <%_.each(data.districtSum.pdLst,function(v,k){ %>
+                                        <h4 class="area_title"><%=v.name %>(<%=v.tCount %>)</h4>
+                                        <div class="area_subnav hidden">
+                                            <a href="javascript:;" data-districtid="<%=v.id %>" data-districtname="<%=v.name %>" data-districtlabel="<%=v.label %>" data-districttype="<%=v.type %>">全部<%=v.name %></a>
+                                            <%_.each(v.cdLst,function(w,l){ %>
+                                            <a href="javascript:;" data-districtid="<%=w.id %>" data-districtname="<%=w.name %>" data-districtlabel="<%=w.label %>"><%=w.name %>(<%=w.tCount %>)</a>
+                                            <%}) %>
+                                        </div>
+                                        <%}) %>
+                                    </div>
+                                    <%} %>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="shaixuan <%if(!!data.hasfilter){ %>on<%} %>">筛选
+                        <i class="icon_b <%if(!!data.hasfilter){ %>icon_sx_blue<%}else{ %>icon_sx_hui<%} %>"></i></li>
+                        <%var crecommend=['综合推荐','游玩天数','游玩天数','价格','价格','销量']; var sortBy=[0,5,3,4]; %>
+                        <li class="crecommend"
+                            <% if(data.isLocal){ %>style="width:50%;"<%} %>><%=crecommend[data.sortType] %>
+                            <i class="icon_b <%if(data.sortType==3){ %>icon_top_hui<%}else{ %>icon_bottom_hui<%} %>"></i>
+                            <dl class="hide_div" style="display:none">
+                                <%_.each(sortBy, function(v,k){ %>
+                                <dd <%if(v==data.sortType){ %>class="on"<%} %>><%=crecommend[v] %><i class="<%if(v==3){ %>up<%}else{ %>down<%} %>"></i></dd>
+                                <%}) %>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="warp_z" style="display:none"></div>
+            </div>
+        </div>   
+    </script>
+
+    <!--main_filter begin-->
+    <script id="shaixuanTemplate" type="text/lizard-template" data-id="multi_template">
+     
+        <div class="content">
+            <div class="content_filter">
+                <ul class="filter_item">
+                    <%_.each(data, function(v,k){%>
+                    <%if(v.type=="isSale" || v.type=="isPromo"){ %>
+                    <li class="js_onOff oc_r" data-type="<%=v.type %>"><%=v.name %><i class="<%if(v.key){%>btn_on<%}else{%>btn_off<%} %> "></i></li>
+                    <%}else{ %>
+                    <li class="js_filters_li" data-index="<%=k%>" data-type="<%=v.type%>"><%=v.name %><div class="no_xian"><%=v.text %></div></li>
+                    <%} %>
+                    <%})%>
+                </ul>
+            </div>
+            <button class="btn_blue btn_org mt20" id="js_finishBtn" value="">确定</button>
+        </div>
+    </script>
+     <!--main filter end-->
+        <!--sub filter begin-->
+    <script id="filterlistTemplate" type="text/lizard-template" data-id="multi_template">
+            <div class="content">
+                <ul class="item_select" id="js_filter_select">
+                    <%_.each(data, function(v,k){%>
+                    <%if(v.text!='无钻' && v.text!='当地参团' && typeof v.text!="undefined"){ %>
+                    <li class="<%if(v.isSelect){ %>cur<%} %>" data-key="<%=v.key%>" data-id="<%=k%>"> <%=v.text.replace("-日","日以上")%></li><%} %>
+                    <%})%>
+                </ul>
+            </div>
+        </script>
+        <!--sub filter end-->
+        <!--preload view begin-->
+    <script id="fakeVlistTemplate" type="text/lizard-template" data-id="multi_template">
+            <div class="register_pro content_list" style="padding:0px">
+                <nav class="tpye_tab"
+                    <%if(!!data.isInApp){ %>style="top:0"<%} %>>
+                    <li class="vDepart on" data-linetype="1" style="width:50%">出发地参团</li>
+                    <li class="vLocal " data-linetype="3" style="width:50%">一日游</li>
+                </nav>
+                <div class="footer">
+                    <ul class="tab_list">
+                        <li class="districtsum"><span>目的地</span><i class="icon_b icon_all_hui"></i></li>
+                        <li class="shaixuan ">筛选<i class="icon_b icon_sx_hui"></i></li>
+                        <li class="crecommend">
+                            综合推荐<i class="icon_b icon_bottom_hui"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </script>
+        <!--preload view end-->
+        @RenderPage("../Shared/Footer.cshtml")
+
+</body>
+</html>

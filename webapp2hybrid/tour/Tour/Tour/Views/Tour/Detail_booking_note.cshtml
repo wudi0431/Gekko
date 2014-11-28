@@ -1,0 +1,35 @@
+﻿@using System.Configuration
+
+<!DOCTYPE html>
+<html>
+<head>
+    @RenderPage("../Shared/Header.cshtml")
+</head>
+<body class="gray" onselectstart="return false">
+    @RenderPage("../Shared/BodyLayout.cshtml")
+
+    <script type="text/lizard-config">
+        {
+            "url_schema": "/detail_booking_note",
+            "model": {
+                "apis": [],                
+            },
+            "view":{
+                "header": Lizard.T("headTmpl"),
+                "viewport": Lizard.T("viewportTmpl")
+            },
+            "controller": "@ConfigurationManager.AppSettings["WebresourcePDBaseUrl"]tour/controllers/detail.booking.note.js"
+        }
+    </script>
+
+    <script id="headTmpl" type="text/lizard-template">
+        <h1>团队游</h1>
+    </script>
+
+    <script id="viewportTmpl" type="text/lizard-template">        
+    </script>
+    @RenderPage("../Shared/Footer.cshtml")
+</body>
+</html>
+
+

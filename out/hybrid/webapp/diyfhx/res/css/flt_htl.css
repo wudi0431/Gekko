@@ -1,0 +1,590 @@
+﻿@charset "utf-8";
+/*== bg spirite ==*/
+.home_ico:after,.i_bef2:before,.taocan_info .global,.taocan_info .prices,.taocan_info .resource,.taocan_info .quick,.ex_city .ex:after,.diy_tip_main .icon:after,.ico_gth_b:after,.ico_zz,.ico_jt,.ico_com, .ico_hot, .ico_pos
+{background-image:url(http://pic.c-ctrip.com/h5/taocan/v_60/un_flt_htl.png?20141031.png);background-repeat:no-repeat;background-size:100px auto;}
+.take_arrow:after,.line:after,.diy_tip_main:after,.other_add_info li:after,.cost_2 .con:after,.add_item li h4:after,.add_item_2 li:after,.a_map:after,.a_nums:after,.add_pro_1 li:after,.htl_item.pro .items:after,.more_content .down:after,.more_content .up:after,.htl_list li .htl_list_box:after
+{content:"";width:6px;height:6px;position:absolute;right:15px;top:50%;margin-top:-4px;border:none;border-top:#a9a9a9 2px solid;border-left:#a9a9a9 2px solid;
+-moz-transform:rotate(135deg);-webkit-transform:rotate(135deg);-o-transform:rotate(135deg);-ms-transform:rotate(135deg);transform:rotate(135deg);}
+.info_write .take_plus:after {content:"";position:absolute;right:10px;top:50%;margin-top:-12px;height:24px;width:24px;
+background-image:url(http://pic.c-ctrip.com/h5/taocan/flt_htl/un_order.png?201407014.png);background-repeat:no-repeat;background-size:110px auto;background-position:-50px 0;border:0;
+-moz-transform:rotate(0deg);-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}
+.htl_list .htl_list_box,.flt_list>li,.posi li,.flt_htl_list li,.flt_htl_list,.diy_tip,.chosen_item,.chosen_item.cur h3,.search_boxx a,.flt_item,.flt_item li,.ex_flt,.htl_item li,.add_item li,.add_item_box,.flt_box.for_next_pub_tip + .pub_tip,.htl_item_list li,.room_item,.det_htl,.htl_list,.fold, .unfold,.add_pro_2_item,.add_pro_2_item li,.other_add_info,.other_add_info li,.info,.other_add_info li,.cost_wrap,.drop_tip,.htl_poliby .spc_htl_tips,.product_wrap,.htl_item.pro .items,.htl_item.pro .info_text,.order_opera2 a,.add_pro_li,.search_boxx .date,.more_content,.more_content .add_item li  {-webkit-border-image:url(http://pic.c-ctrip.com/h5/taocan/icon_border_dddddd.png) 2 stretch;border-image:url(http://pic.c-ctrip.com/h5/taocan/icon_border_dddddd.png) 2 stretch;border-width:0}
+.flt_selected_tip,.tab_yel,.pub_tip{-webkit-border-image:url(http://pic.c-ctrip.com/h5/taocan/icon_border_f3d598.png) 2 stretch;border-image:url(http://pic.c-ctrip.com/h5/taocan/icon_border_f3d598.png) 2 stretch;border-width:0}
+.search_boxx a:active,.tab_blu,.search_boxx .date:active {-webkit-border-image:url(http://pic.c-ctrip.com/h5/taocan/icon_border_099fde.png) 2 stretch;border-image:url(http://pic.c-ctrip.com/h5/taocan/icon_border_099fde.png) 2 stretch;border-width:0}
+.htl_list li .htl_list_box:after {right:5px;}
+/*== 搜索 ==*/
+.search_boxx{padding:0 15px;color:#333}
+.search_boxx>div{position:relative;overflow:hidden;}
+.search_boxx a{border-bottom-width:1px;display:block;box-sizing:border-box;padding:20px 5px 10px 5px;position:relative;font-size:22px;line-height:30px;position:relative;min-height:60px}
+.search_boxx a .spc{float:right;}
+.search_boxx em{font-size:12px !important;line-height:14px;color:#666;margin-left:4px;position:relative;top:1px}
+.ex_city a{float:left;width:42%;}
+.ex_city a:last-child{float:right;text-align:right}
+.ex_city .add_tips{position:absolute;top:32px;right:10px;}
+.ex_city .ex{position:absolute;left:50%;bottom:0;margin-left:-21px;height:42px;width:42px;border:0 none;padding:10px 0 0 0;box-sizing:border-box;text-align:center;min-height:42px}
+.ex_city .ex:after{content:"";display:inline-block;background-position:-35px -515px;height:20px;width:20px;vertical-align:top}
+.ex_city .ex.only_set{padding-top:15px}
+.ex_city .ex.only_set:after{height:10px;}
+.date a{width:50%;float:left;box-sizing:border-box;height:74px;}
+.date em.block{display:block;margin-left:0;text-align:left;}
+
+.pass_nu a .pas_tip{float:right;top:14px}
+.arrow_ex:after{content:"";position:absolute;right:-4px;bottom:-2px;height:0;width:0;line-height:0;font-size:0;border-width:6px 6px 0 6px;border-style:solid dashed none;border-color:#ddd transparent transparent;-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-o-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);}
+
+.search_boxx a:active{border-bottom-width:1px;color:#099fde}
+.search_boxx a:active em{color:#099fde}
+.search_boxx a.arrow_ex:active:after{border-color:#099fde transparent transparent;}
+.set_a:active + a {border-bottom-width:1px}
+.set_a:active + a.arrow_ex:after{border-color:#099fde transparent transparent;}
+
+.ex_city .ex_begin,.ex_city .ex_end{position:absolute;top:20px;width:100%;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
+.ex_city .ex_begin{left:5px;}
+.ex_city .ex_end{right:5px;}
+.ex_city .ex_left{-webkit-transform:translateX(125%);text-align:right;}
+.ex_city .ex_right{-webkit-transform:translateX(-125%);text-align:left}
+.ex_city .ex:active{border:0 none}
+.search_btn:active{opacity:0.7;color:#fff;}
+#search{margin:20px auto;position:relative}
+.search_boxx .date {border-widht:0;border-bottom-width:1px;overflow:hidden}
+.search_boxx .date:active {border-widht:0;border-bottom-width:1px;}
+.search_boxx .date .set_a,.search_boxx .date .arrow_ex,.search_boxx .date .set_a:active,.search_boxx .date .arrow_ex:active {border-bottom:0px;}
+/*== 搜索筛选 ==*/
+.taocan_info{margin:30px 0 0 10px;padding-bottom:30px;overflow:hidden}
+.taocan_info li{color:#c5c5c5;float:left;width:50%;box-sizing:border-box;padding:0 0 15px 40px;}
+.taocan_info h2,.taocan_info h3{line-height:16px;}
+.taocan_info h2{font-size:14px;}
+.taocan_info h3{font-size:10px;}
+.taocan_info .global,.taocan_info .prices,.taocan_info .resource,.taocan_info .quick{float:left;margin-left:-35px;height:30px;width:30px;}
+.taocan_info .global{background-position:0 -600px}
+.taocan_info .prices{background-position:-60px -600px}
+.taocan_info .resource{background-position:-30px -600px}
+.taocan_info .quick{background-position:0 -630px}
+
+.search_no_result{color:#666;font-size:16px;text-align:center;position:relative;padding:170px 0 40px;}
+.search_no_result .icon_fjds{position:absolute;left:50%;width:44px;height:54px;line-height:30px;color:#999;margin-left:-19px;top:100px;}
+.search_no_result .icon_fjds:before,.search_no_result .icon_fjds:after{content:"";position:absolute;width:32px;height:32px;left:0}
+.search_no_result .icon_fjds:before{border:3px solid #c2c2c2;border-radius:50%;top:6px}
+.search_no_result .icon_fjds:after{width:14px;height:20px;left:22px;top:40px;border-right:#c2c2c2 3px solid;
+-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-o-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);}
+.search_no_result .icon_fjds i{display:inline-block;height:30px;line-height:30px;}
+
+/*== 产品页 ==*/
+.num_warning{color:#f00; padding: 0 4px}
+.flt_item .num_warning,.pic_htl_item .num_warning{ font-size:12px !important;background:#f6403c;padding:0 4px;font:10px/14px arial; color:#fff;border-radius: 3px; position:relative; vertical-align:middle; display:inline-block}
+.pic_htl_item .num_warning {padding:2px 4px;}
+.flt_item .num_warning:before,.pic_htl_item .num_warning:before { content: "";width: 4px;height: 4px;position: absolute; background:#f6403c;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);top:6px;left:-2px;}
+.pic_htl_item .num_warning:before  {top:-2px;left:auto;right:10px;}
+.v_line{width:2px;background:#c4c4c4;position:absolute;height:100%;left:20px;top:20px;z-index:1}
+.tag.num{font:10px/12px arial;}
+.box_item .tit h3{padding:10px 10px 10px 35px;font:16px/16px arial;}
+.box_item .tit .quan{border:#666 3px solid;border-radius:50%;background:#f5f5f5;width:4px;height:4px;position:absolute;left:16px;top:14px;outline:#f5f5f5 4px solid;}
+.box_item .tit .s_add{background:#666;padding:0 6px;color:#fff;line-height:20px;border-radius:3px;position:relative;font-size:14px;display:inline-block}
+.box_item .tit .s_add:after{content:"";width:4px;height:4px;position:absolute;top:7px;left:-2px;background:#666;
+-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);}
+.box_item .tit .org .quan{border-color:#f93}
+.box_item .tit .org .s_add{background:#f93;}
+.box_item .tit .org .s_add:after{background:#f93;}
+.box_item .pub_tip{border:none;margin-top:5px}
+/* 机票确认 */
+.flt_item{padding:0 0 0 15px;border-top-width:1px;border-bottom-width:1px;}
+.flt_item li{border-top-width:1px;padding:10px 15px 15px 0;}
+.flt_item .summary .tag{width:60px}
+.flt_item .summary .air_corp{display:block;color:#999;}
+.for_next_pub_tip .flt_item .summary .air_corp {display:inline-block;}
+.flt_item .summary .num_warning{ margin-left:5px}
+.flt_tks{padding:0 80px;overflow:hidden}
+.flt_info{text-align:center;color:#333;font-size:11px;padding-top:15px}
+.flt_info .line{margin:10px 0 8px}
+.flt_tks .set_off,.flt_tks .set_down{font:12px/16px arial;color:#666}
+.flt_tks .set_off{margin-left:-80px;}
+.flt_tks .set_down{margin-right:-80px;}
+.flt_tks .set_off span,.flt_tks .set_down span{color:#333;}
+.flt_tks .set_down em {-webkit-box-pack:end;-moz-box-pack:end;-ms-box-pack:end;box-pack:end;}
+.flt_tks .citsy{font:14px/16px arial;height:16px;overflow:hidden}
+.flt_tks .dais{color:#666}
+.flt_tks .porta{overflow:hidden;text-overflow:ellipsis;display:-webkit-box !important;-webkit-box-orient:vertical;line-height:16px;-webkit-line-clamp:2;position:relative;height:32px}
+.flt_tks .porta em {height:32px;width:100%;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:center;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:center;display:-ms-box;-ms-box-orient:horizontal;-ms-box-align:center;display:box;box-orient:horizontal;box-align:center;}
+.flt_tks .times{padding-top:3px}
+.ex_flt{line-height:44px;text-align:center;display:block;box-sizing:border-box;background:#fff;border-bottom-width:1px;border-top-width:1px;color:#1ca3ce;margin-top:-1px}
+.ex_flt:active{background:#f5f5f5;}
+
+.flt_item:active{background:#f5f5f5;}
+.flt_item p a:after,.htl_item p a:after{display:none}
+/* 酒店确认 */
+.htl_item .num{display:inline-block;background:#84cfee;width:16px;height:16px;color:#fff;font:14px/16px arial;margin-right:8px;text-align:center}
+.htl_item li{padding:0 15px;position:relative;margin-bottom:5px;background:#fff;border-top-width:1px;border-bottom-width:1px;}
+.htl_item li.htl_li_tit{}
+.htl_item .summary{border-bottom:#eee 1px solid;padding:6px 0;line-height:18px}
+.htl_item .summary .nights{float:right;}
+.htl_item .summary h5{margin-right:170px;}
+.htl_item h4{font:16px/22px arial;padding:10px 0 4px}
+.htl_item .htl_sum{color:#666;font-size:14px;}
+.htl_item .htl_sum h5{margin-right:80px;}
+.htl_item .htl_num,
+.htl_item .htl_num2{float:right;color:#333}
+.htl_item .htl_num2{width:70%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right}
+.htl_item .ex_htl{margin:10px -15px -1px;padding-top:1px;overflow:hidden}
+.htl_item .ex_mult_2 .ex_flt{float:left;width:50%;position:relative}
+.htl_item .ex_mult_2 .ex_flt:after{content:"";position:absolute;right:0;top:10px;height:24px;width:1px;font-size:0;background:#e2e2e2;}
+.htl_item .ex_mult_2 .ex_flt:last-child:after{display:none}
+.htl_item ~ .ex_flt:before{content:"+";width:20px;height:20px;margin:-5px 4px;overflow:hidden;font-size:30px;display:inline-block;line-height:20px;vertical-align:middle;}
+
+.htl_item li:active{background:#f5f5f5}
+
+/*== 产品页增加图片 ==*/
+.pic_htl_item .title_city {position:relative;padding-left:24px;}
+.pic_htl_item .title_city .num {float:left;margin-left:-24px;}
+.pic_htl_item .title_city .text{display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.pic_htl_item .summary .alter {float:right;padding:15px 15px 15px 10px;margin:-15px -15px -15px 0;color:#1ea0db;}
+.pic_htl_item h4 {position:relative;padding-left:75px;min-height:65px;font:16px/18px arial;}
+.pic_htl_item h4 .hotel_pic {position:absolute;left:0;top:10px;width:65px;height:65px;}
+.pic_htl_item h4 .hotel_name {display:block;min-height:35px;}
+.pic_htl_item h4 .extra_text {display:inline-block;color:#666;font-size:12px;line-height:16px;width:100%;}
+.pic_htl_item h4 .extra_text .grade {margin-right:10px;}
+.pic_htl_item h4 .extra_text dfn {font-weight:400;font-size:14px;color:#1ca3ce;margin-right:3px;}
+.pic_htl_item h4 .extra_text .extra {display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.pic_htl_item .num_warning{ float:right;}
+.box_item .pic_htl_item .num_warning{ margin-top:8px;}
+.pic_htl_item .tag_gift {margin-left:2px;}
+/*== 增加产品确认页中附加产品的更多用车样式 ==*/
+.more_content{position:relative;border-top-width:1px;padding:10px 0}
+.add_item_box .more_content:nth-of-type(1){border-bottom:0 none;}
+.more_content .more_link {display:inline-block;width:100%;line-height:22px;font-weight:100;color:#099fde;}
+.more_content.cur .more_link{margin-bottom:5px}
+.more_content .down,.more_content .up {color:#099fde;display:block;text-align:right;position:relative;padding:10px 30px 10px 10px;margin:-10px;cursor:pointer}
+.more_content .down {padding-right:18px;}
+.more_content .up {padding-right:30px;}
+.more_content .down{position:absolute;right:20px;top:10px}
+.more_content .down:after,.more_content .up:after{border-top-color:#099fde;border-left-color:#099fde}
+
+.more_content .down:after {margin-top:-6px;right:5px;-moz-transform:rotate(225deg);-webkit-transform:rotate(225deg);-o-transform:rotate(225deg);-ms-transform:rotate(225deg);transform:rotate(225deg);}
+.more_content.cur .up:after {-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg);-o-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);}
+
+.more_content .add_item{display:none}
+.more_content.cur .add_item {display:block;}
+.more_content .add_item li {border-top-width:1px;border-top:1px solid #ddd\9\0;}
+.more_content .add_item li:first-child {border-top:0;padding:0;margin-bottom:10px;}
+
+.for_more .down,.for_more .up{position:absolute;right:10px;bottom:10px;padding-right:30px;top:auto}
+.for_more .down ~ .add_item2,.for_more .up ~ .add_item2{margin-bottom:30px;}
+/*== 增加无箭头样式 ==*/
+.htl_item.pro .items.no_arrow:after {display:none;}
+/*== 测试测试 ==*/
+
+/*== 去除酒店选择页箭头样式  ==*/
+.htl_list li .htl_list_box:after {display:none;}
+
+/* 限时赠送 */
+.add_item_box{padding:0 0 0 55px;background:#fff;border-top-width:1px;border-bottom-width:1px;margin-top:-1px;}
+.add_item_box:after{content:"";clear:both;display:block;overflow:hidden;height:0;}
+.add_item_tit{float:left;margin:10px 0 0 -40px;color:#999;width:30px}
+.add_item{}
+.add_item li{border-top-width:1px;padding:10px 0;position:relative;}
+.add_item li:first-child{border-top:0 none;}
+.add_item li h4{font-size:16px;line-height:22px;position:relative;padding-right:60px}
+.add_item li h4:after{top:12px}
+.add_item li p{font-size:12px;color:#999;margin-top:4px}
+.add_item li .add_num{position:absolute;right:25px;top:13px;color:#999;text-align:right;font-size:12px;}
+.add_item li:first-child .add_num {top:3px;}
+.add_item li .add_num .price {display:block;color:#ff7d13;font:600 14px/16px Arial}
+.add_item2 li h4{padding-right:80px}
+
+.add_item li:active{background:#f5f5f5;}
+/*== 机票详情 ==*/
+.tip_jt .port{margin-left:12px;}
+/*== 酒店详情 ==*/
+.htl_item.pro li{padding:0 0 15px 15px;margin:10px 0 0 0}
+.htl_item.pro li h4{margin:0;}
+.htl_item.pro li>*{padding-right:15px}
+.htl_item.pro li:first-child{margin-top:0}
+.htl_item.pro .items{border-top-width:1px;padding:10px 0;position:relative;}
+.htl_item.pro .items.mar_top{margin-top:10px}
+.htl_item.pro .items h4{margin:0 90px 0 25px;padding:0}
+.htl_item.pro .items .posi_abs{position:absolute;right:15px;top:50%;margin-top:-22px;color:#06a2d0;padding:10px;font-size:16px}
+.htl_item.pro .info_text{border-top-width:1px;}
+.htl_item.pro .p_info{padding-top:10px;color:#999;color:#999;font:12px/18px arial !important;max-height:inherit !important;margin-bottom:4px;}
+.htl_item.pro .more_info{text-align:right;}
+.htl_item.pro .more_info a{margin:-10px -20px;padding:10px 20px 10px 10px}
+
+/*== 附加产品 ==*/
+.add_item_box.pro .add_item_tit{background:#a2a2a2;width:28px;color:#fff;font:10px/16px arial;padding:0 2px;border-radius:3px;text-align:center;}
+
+/*== 普通蒙层 ==*/
+.pro_mask .mask_lay{background:#000;}
+.pro_mask .hide_div_b{bottom:auto;top:0;padding:15px 0;color:#ccc;box-sizing:border-box;height:100%;width:100%}
+.pro_mask .hide_div_b:after {position:fixed;content:"";width:100%;height:40px;bottom:0;left:0;background:-webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(0,0,0,0)),color-stop(0.6,rgba(0,0,0,1)));
+ background:-moz-linear-gradient(top bottom, rgba(255,255,255,0),rgba(255,255,255,1));}
+.pro_mask .pop_close:after{background:#4f4f4f}
+.pro_mask .pub_tip{border:none;margin:0 15px 8px;}
+.cost_item,.total,.mask_pro_tit,.total_tips{border-bottom:#333 1px solid;padding:8px 0;}
+.cost_item{overflow:hidden;margin:0 15px;}
+.cost_item h3{margin-right:80px;}
+.cost_item dt{margin-bottom:8px;color:#fff;overflow:hidden}
+.cost_item dt .price{float:right;}
+.cost_item dd,.cost_item dd .price{font:12px/16px arial;}
+.cost_item dd{margin-bottom:8px;overflow:hidden}
+.cost_item dd:last-child{margin-bottom:0}
+.cost_item dd .price{float:right;color:#ccc}
+.cost_item .drop_count .price{color:#ff7d13}
+.drop_count s{margin-right:6px;text-decoration:none;}
+.mask_pro_tit{font:16px/18px arial;color:#fff;padding:0 0 10px;margin:0 15px;}
+.mask_pro_tit.no_bborder {border-bottom:0 none;}
+.mask_pro_tit i{font-size:12px;color:#ccc;display:block;margin-top:6px}
+.total{color:#ff7d13;margin:0 15px;}
+.total .price{float:right;}
+.total_tips{font-size:12px;border-bottom:none;padding:8px 15px;}
+
+.info_tips{overflow-x:hidden;overflow-y:auto;-webkit-font-smoothing:antialiased;}
+.info_tips_tit{margin:8px 15px 4px;color:#fff;overflow:hidden;}
+.info_tips .mask_con{font-size:12px;color:#ccc;margin:4px 15px 12px}
+
+.search_for_mask {overflow:hidden;top:50%;margin:-110px 0 0 0;position:absolute;width:100%;}
+.mask_pro_tit+.search_for_mask{margin-top:-176px;}
+.search_for_mask .search_boxx {margin:0 15px;background:#fff;overflow:hidden}
+.search_for_mask .search_boxx .ex_city a{width:100%;float:none;}
+.search_for_mask .search_boxx .ex_city a:last-child{text-align:left}
+.search_for_mask .search_boxx em{margin-left:2px}
+
+.htl_item.for_mask{padding:8px 0;margin:0 15px}
+.htl_item.for_mask ~ .search_for_mask{margin-top:-20px}
+.htl_item.for_mask li{background:none;border:none;padding:0;margin-bottom:0}
+.htl_item.for_mask .summary{border:0 none;}
+.htl_item.for_mask .num{background:#666;color:#ccc;border-radius:3px}
+
+/*== 酒店详情 ==*/
+.htl_list{background:#fff;border-top-width:1px;border-bottom-width:1px;margin-top:-1px}
+.htl_list li{position:relative}
+.htl_list li.cur {background:#fffce7}
+.htl_list li:first-child .htl_list_box {border-top:0 none}
+.htl_list .htl_list_box{position:relative;padding:10px 15px 10px 105px;min-height:80px;position:relative;border-top-width:1px;}
+.htl_list .htl_list_box:after{right:10px}
+.htl_list .pic {float:left;margin-left:-90px;height:80px;width:80px;}
+.htl_list .pic img {width:80px;height:80px;display:block;}
+.htl_list .con {color:#999;}
+.htl_list .con h4 {color:#333;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.det_htl .htl_list .con h4 {color:#333;font:16px/20px arial;white-space:normal}
+.htl_list .con p{font-size:12px;margin-top:3px;line-height:16px}
+.htl_list .point{margin-right:3px;color:#099fde;font:12px/16px arial;display:block}
+.htl_list .point em{font:600 18px/16px arial;margin-right:4px}
+.tag_gift {border:#0fb0e2 1px solid;color:#0fb0e2;font:9px/9px "STHEITI";height:10px;width:10px;display:inline-block;text-align:center;vertical-align:middle;position:relative;top:-1px}
+.htl_list .price_htl {position:absolute;right:15px;top:35px;width:110px;height:24px;text-align:right}
+.htl_list .price_htl .txt{color:#999}
+.price_htl .prices {height:22px;position:relative;}
+.btn_book_box {text-align:right;}
+.btn_book {display:inline-block;width:70px;line-height:30px;text-align:center;background:#fc7d2a;color:#fff;border-radius:3px;}
+.btn_book_gray {background:#cdcdcd;color:#fff;}
+.dui{display:inline-block;height:16px;width:16px;background:#94cb36;border-radius:50%;vertical-align:middle;margin-right:4px;position:relative}
+.dui:before {content:"";position:absolute;height:8px;width:4px;top:50%;margin-top:-6px;right:5px;border:none;border-top:#fff 2px solid;border-left:#fff 2px solid;-moz-transform:rotate(-135deg);
+-webkit-transform:rotate(-135deg);-o-transform:rotate(-135deg);-ms-transform:rotate(-135deg);transform:rotate(-135deg);}
+.htl_list .selected{background:#fffce7;}
+.htl_list .selected .btn_book_box{color:#94cb36;line-height:30px;}
+.htl_list .unselected {color:#f30;}
+
+/*====== 搜索结果 ======*/
+.diy_tip{padding:10px;background:#fff;border-bottom-width:1px;font-size:16px;position:relative;margin-bottom:10px}
+.diy_tip:after {display:none;}
+.diy_tip .diy_tip_main {position:relative;padding-left:90px;margin-top:8px;}
+.diy_tip .diy_tip_main:after {right:0;}
+.diy_tip_main .icon {position:absolute;left:0;top:50%;margin-top:-20px;width:80px;height:40px;background:#79d3ff;}
+.diy_tip_main .icon:after {position:absolute;left:7px;top:10px;content:"";width:65px;height:20px;background-position:0 -341px;}
+.diy_tip_main h4{line-height:20px;font-size:14px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.diy_tip_main p {line-height:20px; font-size:12px;color:#f93;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;} 
+
+/*== 机酒列表 ==*/
+.hot_recom{padding:10px 0 0;font-size:16px;}
+.hot_recom h3{font-size:16px;line-height:22px;padding:0 10px 10px}
+.flt_htl_list{background:#fff;border-bottom-width:1px;}
+.flt_htl_list li {padding:0 0 0 10px;border-top-width:1px;position:relative;padding:10px 10px 10px 100px;min-height:80px;}
+.flt_htl_list .pic {float:left;margin-left:-90px;width:80px;}
+.flt_htl_list .pic img {width:80px;height:80px;display:block;}
+.flt_htl_list .con {color:#666;font-size:12px;position:relative}
+.flt_htl_list .con h4 {color:#333;margin-top:-2px;font-size:16px;line-height:19px;margin-bottom:8px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;height:38px}
+.flt_htl_list .con p{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;height:18px;margin-right:100px;}
+.flt_htl_list .con .sale_info {margin-right:0;color:#ff7d13;margin-top:-8px;overflow:hidden;text-overflow:ellipsis;}
+.flt_htl_list .con .tag_labels{padding-left:35px;margin:4px 0 0;height:14px;line-height:14px;text-align:right;}
+.flt_htl_list .con .tag_labels .num {float:left;margin-left:-35px;width:35px;text-align:left;}
+.flt_htl_list .con .tag_labels .num dfn {font-weight:700;}
+.flt_htl_list .con p .point,
+.flt_htl_list .con p .gap{margin-right:6px}
+.flt_htl_list .con .pos_info{color:#333}
+.flt_htl_list .price_htl {position:absolute;right:10px;bottom:28px;font-size:12px;width:220px;text-align:right;color:#666;}
+.flt_htl_list .price_htl em{color:#666}
+.tab_yel,.tab_blu,.tab_green{display:inline-block;line-height:12px;font-size:10px;border-width:1px;margin-right:4px;background:#fff;padding:0 1px;}
+.tab_yel{color:#ff9a14}
+.tab_blu{color:#099fde}
+.tab_green{color:#36a42e}
+.ico_hui{position:absolute;left:0;top:1px;color:#fff;}
+.ico_hui:before{content:"惠";position:absolute;left:3px;top:-1px;color:#fff;z-index:1;font-size:12px}
+.ico_hui:after{content:"";position:absolute;left:-20px;top:-5px;height:0;width:0;line-height:0;font-size:0;border-width:25px 25px 0 25px;border-style:solid dashed none;border-color:#ff7a13 transparent transparent;-moz-transform:rotate(135deg);-webkit-transform:rotate(135deg);-o-transform:rotate(135deg);-ms-transform:rotate(135deg);transform:rotate(135deg);z-index:0}
+
+/*== 详情页概要 ==*/
+.profile_box{position:relative}
+.product_wrap {padding:10px 15px;background:#fff;border-bottom-width:1px;margin-bottom:10px}
+.banner_box{position:relative}
+.code{position:absolute;right:10px;bottom:5px;color:#999;background:rgba(0,0,0,.5);color:#fff;border-radius:10px;line-height:20px;padding:0 10px}
+.product_wrap h2 {font:100 18px/22px Tahoma;margin-bottom:4px;}
+.drop_tip {margin:6px -15px 0 0;padding:10px 35px 0;color:#f93;border-top-width:1px;position:relative;line-height:16px}
+.drop_tip p{margin-bottom:4px;padding-left:10px}
+.drop_tip p:before{content:"";background:#f93;margin:6px 0 0 -10px;float:left;height:4px;width:4px;border-radius:50%;}
+.drop_tip i.tab_yel {float:left;margin:2px 0 0 -35px;text-align:center}
+.drop_tip .ico_gth_b{ position:absolute;right:0;top:0;}
+.drop_tip .ico_gth_b:after{content:"";background-position:-43px -322px;width:14px;height:14px;display:block;margin:12px 15px 10px;}
+.tag_labels{margin-bottom:4px;}
+.price_code{position:relative;line-height:18px;}
+.price_code .price{display:inline-block;overflow:hidden;width:100px;line-height:18px;height:18px;}
+.price_code .a_tip{float:right;color:#099fde;margin:-10px;padding:10px}
+.cost_wrap {padding:10px 15px;background:#fff;border-bottom-width:1px;border-top-width:1px;margin-bottom:10px}
+.cost_wrap h3{font-size:16px;margin-bottom:6px}
+.cost_wrap h4,.cost_wrap .con{font-size:12px;}
+.cost_wrap h4{line-height:21px}
+.cost_wrap .con{color:#666;position:relative}
+.cost_2 .con{margin-right:-15px;padding-right:25px;}
+.cost_2 .con.ellips_line3{line-height:18px;max-height:54px;}
+.cost_2 .con .dian{margin:0 3px;}
+.cost_2 .con .dian:after{content:"";background:#999;display:inline-block;height:4px;width:4px;border-radius:50%;vertical-align:middle}
+.other_add_info{padding-left:15px;background:#fff;border-bottom-width:1px;border-top-width:1px;}
+.other_add_info li{position:relative;border-top-width:1px;padding:10px 15px 10px 0;font:16px/22px arial;}
+.other_add_info li:first-child{border-top:0 none}
+.other_add_info li:after{}
+
+.info{background:#fff;padding:10px;border-bottom-width:1px;border-top-width:1px;margin-bottom:10px}
+.last_info{border-top:#e2e2e2 1px solid;margin-bottom:0}
+.info h3{font-size:16px;color:#333;margin-bottom:6px;}
+.info_list li{color:#666;padding-left:20px;position:relative}
+.info_list li .wjx{float:left;margin-left:-20px;font-size:18px;line-height:18px}
+.info_con{color:#666;}
+
+.route_datail{font:12px/18px arial;color:#666}
+.route_recom{margin:15px 15px 15px 45px;position:relative;z-index:2}
+.v_line2{width:2px;background:#c8c8c8;position:absolute;height:100%;left:24px;top:20px;z-index:1}
+.h2{font:16px/18px arial;margin-bottom:15px;color:#333}
+.h2 .ico_d{height:24px;width:24px;background:#1491c5;float:left;margin:-2px 0 0 -32px;border-radius:50%;font:14px/24px arial;color:#fff;text-align:center;position:relative}
+.h2 .ico_d:after{content:"";width:0;height:0;position:absolute;left:50%;bottom:-4px;margin-left:-6px;
+border-width:6px 6px 0 6px;border-style:solid dashed none;border-color:#1491c5 transparent transparent;}
+.day_recom{margin-bottom:20px}
+.day_recom .li{position:relative;margin-bottom:10px;}
+.day_recom .li:before{content:"";border:#c8c8c8 3px solid;border-radius:50%;background:#f5f5f5;width:4px;height:4px;position:absolute;left:-25px;top:4px;}
+.day_recom .com_tit h3{color:#333;font:14px/18px arial;}
+.pic_view{overflow:hidden;}
+.pic_view li{float:left;display:inline-block;vertical-align:top;width:50%;min-width:125px;min-height:70px;box-sizing:border-box;padding:8px 8px 0 0}
+.pic_view li img{display:block;width:100%}
+
+/*== 酒店 ==*/
+.room_item {padding:10px 0 0 15px;background:#fff; border-bottom-width:1px;position:relative;margin-bottom:10px}
+.room_item h3{font:600 18px/20px arial; margin-bottom:6px}
+.room_item h3 em{font:100 12px/16px arial; color:#666; display:block;} 
+.room_item .pic {position:absolute;right:10px;top:58px;width:80px;z-index:1}
+.room_item .pic img,.room_item .pic .pic_touch {position:relative}
+.room_item .pic img {width:80px;height:80px;display:block;z-index:0;}
+.room_item .pic .pic_touch {background:rgba(0,0,0,.7);color:#fff;text-align:right;display:block;padding-right:4px;margin-top:-22px;line-height:22px;z-index:1;}
+.ico_com,.ico_hot,.ico_pos{position:absolute;width:20px;height:20px;position:absolute;left:-25px;top:10px;}
+.ico_com {background-position:0 -20px;}
+.ico_hot {background-position:-20px -20px;}
+.ico_pos {background-position:-40px -20px;}
+.tag_box {height:16px;line-height:16px; overflow: hidden;}
+.tag_box i {zoom:0.8}
+.htl_item_list{position:relative;z-index:0}
+.htl_item_list li {border-top-width:1px;line-height:22px;position:relative;padding:10px 5px 10px 0;margin-left:25px;margin-right:110px}
+.htl_item_list li:first-child{border-top:0 none;}
+.htl_item_list li:first-child:after,
+.htl_item_list li:nth-child(2):after{right:0;}
+.htl_item_list li:last-child{margin-right:0;padding-right:115px;}
+.htl_item_list li.no_arrow:after{display:none}
+.take_arrow{position:relative}
+.htl_item_list .a_map {position:absolute;top:50%;margin-top:-20px;right:5px;color:#1ca3ce;padding:10px 25px 10px 10px}
+.htl_item_list .coms{font-size:12px;color:#099fde;line-height:22px}
+.htl_item_list .coms em{font-size:18px;}
+.htl_item_list .coms em.mar_lt{margin-left:15px}
+.htl_item_list .form_to{font-size:10px;color:#999;height:14px;line-height:14px;}
+
+.det_htl {background:#fff;border-top-width:1px;border-bottom-width:1px;position:relative;margin-bottom:10px}
+.det_htl h3 {padding:10px 15px;font:14px/20px arial;position:relative}
+.det_htl h3 em{margin-right:15px}
+.det_htl h3 .a_modi{position:absolute;top:50%;margin-top:-20px;right:0;color:#1ca3ce;padding:10px 15px}
+.det_htl .htl_list .mar_lt{font-size:12px;display:inline-block}
+.det_htl .htl_list .price_htl {top:13px;height:auto}
+.det_htl .htl_list .htl_list_box{padding-right:80px}
+.det_htl .htl_list .htl_list_box .num_warning {line-height:18px;margin-top:-5px;margin-left:5px;}
+.det_htl .htl_list .con p{margin-top:12px;font-size:13px}
+.det_htl .btn_book_box{margin-top:4px}
+.a_nums{position:relative;color:#333;padding-right:20px;font:14px/18px Arial;display:inline-block;margin:-5px 0}
+.det_htl .htl_list_box .a_nums {color:#1ca3ce;}
+.a_nums:after{margin-top:-6px;right:5px;
+-moz-transform:rotate(-135deg);-webkit-transform:rotate(-135deg);-o-transform:rotate(-135deg);-ms-transform:rotate(-135deg);transform:rotate(-135deg);}
+.det_htl .htl_list_box .a_nums:after {border-left-color:#1ca3ce;border-top-color:#1ca3ce;}
+.det_htl .htl_list_box .a_nums.gray:after {border-left-color: #ccc;border-top-color: #ccc;}
+.a_nums.single{padding-right:0}
+.a_nums.single:after{display:none}
+.a_nums.ups:after{margin-top:-2px;
+-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg);-o-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);}
+.selected .a_nums{color:#1ca3ce;}
+.selected .a_nums:after{border-left-color:#1ca3ce;border-top-color:#1ca3ce}
+.selected .gray:after{border-left-color:#ccc;border-top-color:#ccc}
+
+.fold,.unfold{position:relative;font-size:16px;line-height:44px;text-align:center;display:block;box-sizing:border-box;background:#fff;border-bottom-width:1px;border-top-width:1px;color:#1ca3ce;margin:-1px}
+.fold:active,.unfold:active{background:#f5f5f5;}
+.fold:after,.unfold:after{content:"";display:inline-block;width:6px;height:6px;margin-left:8px;position:relative;top:-4px;border:none;border-top:#1ca3ce 2px solid;border-left:#1ca3ce 2px solid;
+-moz-transform:rotate(-135deg);-webkit-transform:rotate(-135deg);-o-transform:rotate(-135deg);-ms-transform:rotate(-135deg);transform:rotate(-135deg);}
+.fold:after{top:0px;
+-moz-transform:rotate(-135deg);-webkit-transform:rotate(45deg);-o-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);}
+
+.htl_poliby{position:relative;}
+.htl_poliby h3{padding:10px 15px;font:16px/16px arial;}
+.htl_poliby .spc_htl_tips{background:#fff;border-top-width:1px;border-bottom-width:1px;padding:10px 15px;font:12px/18px arial;color:#666}
+.htl_poliby .ellips_line3{font:12px/18px arial;max-height:54px;height:54px;}
+.htl_poliby .more_link{text-align:right;padding-right:15px}
+
+/*== 附加产品 ==*/
+.add_pro_1 {background:#fff;}
+.add_pro_li {padding:10px 15px;line-height:22px;border-bottom-width:1px;position:relative}
+.add_pro_li:after{right:15px;}
+.add_pro_li h4{margin-right:100px}
+.add_pro_li .price{position:absolute;right:25px;top:50%;width:90px;text-align:right;line-height:16px;
+-webkit-transform:translate(0,-50%);-moz-transform:translate(0,-50%);-o-transform:translate(0,-50%);-ms-transform:translate(0,-50%);transform:translate(0,-50%);}
+.add_pro_li .price .ems{display:inline-block;position:relative;top:-4px}
+
+.add_pro_2{padding-top:10px;}
+.add_pro_2 h3{padding:10px 15px;font:16px/16px arial;}
+.add_pro_2 h3 .price{float:right;margin-top:-2px}
+.com_link{padding:10px 15px 0;text-align:right;line-height:16px}
+.a_com_link{color:#1ca3ce;padding:10px;margin:-10px}
+.add_pro_2_item {padding-left:15px;border-bottom-width:1px;border-top-width:1px;background:#fff;position:relative}
+.add_pro_2_item li{padding:10px 15px 10px 0;line-height:22px;border-top-width:1px;position:relative}
+.add_pro_2_item li:first-child{border-top:0 none}
+.add_pro_2_item h4{margin-right:100px}
+.add_pro_2_item .com_right{position:absolute;right:15px;top:10px;line-height:22px;padding-right:20px;}
+.add_pro_2_item .com_right.no_ico{padding-right:0}
+.add_pro_2_item .room_nums{right:15px;position:absolute;top:5px}
+.tip_for_txt .tiptxt{color:#a2a2a2;font:12px/21px arial !important;max-height:inherit !important;margin-bottom:4px;}
+.tip_for_txt>p{text-align:right;padding:0 15px;}
+.tip_for_txt>p a{padding:15px;margin:-15px;}
+.tip_for_txt2{overflow:hidden;padding:5px 15px;font:12px/1.5 arial;}
+.tip_for_txt2 a{margin:-15px;padding:15px;color:#1ca3ce}
+.tip_for_txt2 .fr{float:right;}
+/*== 机票查询页面 S ==*/
+.advantage .taocan_info .global,.advantage .taocan_info .quick,.advantage .taocan_info .resource,.advantage .taocan_info .prices,.advantage_icon,.hotel_icon {width:23px;height:23px;background:url(http://pic.c-ctrip.com/h5/taocan/v_60/un_flt_htl.png) no-repeat;background-size:100px auto;}
+.hotel_icon {display:inline-block;width:16px;height:14px;background-position:0 -990px;margin-right:10px;vertical-align:-1px;}
+.flt_search {background:#fff;padding-bottom:20px;}
+.search_boxx>div.tip_jt {overflow:auto;}
+.flt_search .tip_jt:before,.flt_search .tip_jt:after {content:"";position:absolute;top:-2px;width:4px;height:4px;background:#e2e2e2;border-radius:4px;}
+.flt_search .tip_jt:before {left:0;}
+.flt_search .tip_jt:after {right:0;}
+.flt_search .tip_jt .tip_turn {padding:0 15px;}
+.flt_search_info {margin-left:0;padding:0 15px 30px;}
+.flt_search_info li {width:25%;margin-top:5px;text-align:center;padding-left:30px;}
+.flt_search_info .global,.flt_search_info .prices,.flt_search_info .resource,.flt_search_info .quick {vertical-align:-10px;float:none;display:inline-block;margin-left:-30px;}
+.flt_search_info h2 {font-size:12px;margin-left:-5px;display:inline-block;}
+
+/*== 优势弹出框 ==*/
+.search_for_mask .search_boxx.advantage {padding:0;margin:0 auto;max-width:380px;}
+.advantage_icon {display:inline-block;width:32px;height:28px;background-position:-60px -1010px;vertical-align:-8px;margin-right:10px;}
+.advantage .title {height:50px;text-align:center;background:#48b6f1;color:#fff;font:100 22px/50px Arial,"Lucida Grande",Verdana,"Microsoft YaHei",hei;}
+.advantage .taocan_info li {width:100%;}
+.advantage .advantage_list dt {position:absolute;top:0;left:-30px;width:21px;height:21px;}
+.advantage .taocan_info h2 {color:#40b6f3;margin-bottom:5px;font-size:18px;}
+.advantage .taocan_info h3 {font-weight:100;color:#666;font-size:14px;}
+.advantage .taocan_info .global {background-position:0 -1010px;}
+.advantage .taocan_info .quick {background-position:-30px -1010px;}
+.advantage .taocan_info .resource {background-position:0 -1036px;}
+.advantage .taocan_info .prices {background-position:-30px -1036px;}
+/*== 机票查询页面 E ==*/
+
+/*== 机票选择页 S ==*/
+.x_close{position:absolute;height:28px;width:28px;top:0;right:0}
+.x_close:before,
+.x_close:after{content:"";width:0;height:14px;border-left:#a9a9a9 1px solid;position:absolute;right:14px;top:7px;}
+.x_close:before{-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg);-o-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);}
+.x_close:after{-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-o-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);}
+.line{border-top:#e2e2e2 2px solid;height:0;font-size:0;display:block;padding:0 5px;position:relative;text-align:center;margin:10px 0 8px}
+.flt_turn{background:#fff;border:#e2e2e2 1px solid;border-radius:10px;height:12px;font:10px/12px microsoft yahei;padding:0 4px;display:inline-block;position:relative;top:-8px;color:#999}
+.fixed_flt,.flt_tit_fix{position:fixed !important;width:100%;left:0;top:48px;z-index:9}
+.flt_tit_fix{top:auto}
+.flt_selected_tip{background:#fffef1;border-bottom-width:1px;padding:5px 20px 5px 15px;font:12px/18px arial;position:relative;box-sizing:border-box;}
+.flt_tit{padding:6px 15px 6px 35px;line-height:16px;border-bottom:#ccc 1px solid;box-sizing:border-box;background:#37424e;color:#fff;position:relative}
+.flt_tit.down:after,.flt_tit.up:after{border-top-color:#1ea0db;border-left-color:#1ea0db;right:15px;}
+.flt_tit .nums{float:left;margin:1px 0 0 -20px;height:14px;width:14px;background:#fff;color:#37424e;font:10px/14px Arial;text-align:center;}
+.flt_tit .un_chose{float:right;opacity:.4}
+.flt_tit .tim_flt{font-size:12px;display:block}
+#main {height: 100%;}
+.fhx_flight {position: absolute;width: 100%;height: 100%;box-sizing: border-box;padding-bottom: 48px;
+display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-orient: vertical;-webkit-flex-direction: column;flex-direction: column;}
+.fhx_tab_wrapper {-webkit-box-flex: 1;-webkit-flex: 1 1 auto;flex: 1 1 auto;width: 100%;overflow-x: hidden;overflow-y: auto;position: relative;}
+.fhx_tab_body {position: absolute;top: 0;bottom: 0;left: 0;right: 0;-webkit-transtion: padding 400ms ease;transtion: padding 400ms ease;}
+.fhx_addPag {padding-bottom: 43px;}
+.fhx_flight_lists {width: 100%;height: 100%;display: table;table-layout: fixed;}
+.fhx_flight .flt_list_box, .fhx_flight .fhx_table_row {display: table-row;}
+
+.flt_list_box {height: 100%;margin-bottom: 0;}
+.flt_list_box.cur {display: block;}
+.fhx_flt_tit {height: 29px;}
+.fhx_flt_tit_selected {height: 45px;}
+.flt_list_box{margin-bottom:30px;}
+.flt_list{background:#fff;border-bottom:#e2e2e2 1px solid;}
+.flt_list>li{padding:15px 0;border-top-width:1px}
+.flt_list>.cur{background:#fffce7}
+.flt_list>li:first-child{border-top:0 none}
+.item_tit{padding-right:74px;margin:0 15px;position:relative}
+.item_tit .price{position:absolute;top:22px;right:0}
+.item_tit strong{font:800 16px/22px Arial;}
+.item_tit em{font:800 18px/22px Arial;}
+.item_tit .time{font-size:10px;color:#999;display:inline-block}
+.item_tit .daies{font-size:10px;color:#333}
+.item_tit .num_warning{ position:absolute; right:0; top:6px;}
+.item_tit .num_warning:before{ left:auto; top:auto; right:10px; bottom:-2px; border-radius:8px 0 0}
+
+.flt_all_info{margin:4px 10px 0;font-size:12px}
+.flt_all_info strong{font-weight:100}
+/*== js要求加 S ==*/
+.flt_list_box {overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;transition:height 1000ms ease;-webkit-transition:height 1000ms ease;}
+.flt_list_box.hide {height:0 !important;}
+/*== js要求加 E ==*/
+/*== 中转内容区 ==*/
+.flt_route{padding:2px 74px 10px 0; margin:0 15px;position:relative;font-size:12px}
+.line:before,.line:after{content:"";width:6px;height:6px;position:absolute;top:-4px;}
+.line:before{left:0;background:#ddd;border-radius:50%}
+.line:after{right:0;top:0;height:4px;width:4px;border-top-color:#ddd;border-left-color:#ddd}
+.flt_route .route{overflow:hidden;position:relative;border:none;padding:0}
+.flt_route .route span{display:inline-block;width:36%;line-height:18px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.flt_route .route .send{float:left;}
+.flt_route .route .get{float:right;text-align:right;}
+.flt_route .route .turn{position:absolute;top:0;left:50%;width:30%;margin-left:-14%;color:#999;font-size:10px;text-align:center}
+
+.chosen_item{margin:0 15px;border-top-width:1px}
+.chosen_item:first-child{border-top:0 none;}
+.chosen_item h3{font:12px/28px arial;color:#666;background:#f4f4f4;padding:0 25px 0 10px;position:relative;}
+.chosen_item .down:after, .chosen_item .up:after{right:10px;border-left-color:#666;border-top-color:#666}
+.chosen_item h3 .ticket{float:right}
+.posi{background:#f6f6f6;font-size:12px;padding-left:10px;overflow:hidden;display:none}
+.posi li{padding:5px 10px 5px 0;border-top-width:1px;position:relative;margin-bottom:-1px}
+.posi li:first-child{border-top:0 none}
+.posi li.curr{background:#fffce7;margin-left:-10px;padding-left:10px}
+.posi li h5{font:14px/18px arial;}
+.posi li .a_tgq{color:#099fde;padding:10px 0;margin:-10px 0;display:inline-block}
+.posi li .ticket{display:inline-block;width:40%;vertical-align:top;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.posi li .num{ width:18%; display:inline-block; text-align:right; font-size:12px}
+.posi li .prices{position:absolute;right:10px;top:50%;margin-top:-11px;min-width:60px;height:22px;line-height:22px;background:#ff9a14;border-radius:3px;text-align:center;padding:0 3px;color:#fff}
+.posi li .price{font-size:14px;color:#fff !important}
+.posi li:nth-child(odd).curr:after{border-right:none}
+@media (min-width:359px) {
+.flt_route .route span{width:auto;}
+}
+.pub_tip{background:#fff9e6;border-top-width:1px;border-bottom-width:1px;padding:5px 10px;position:relative;box-sizing:border-box;font:12px/18px arial;color:#333 ;margin-bottom:-1px}
+.btn_gray {position:absolute;right:0;top:0;display:inline-block;width:50px;line-height:20px;text-align:center;color:#fff;background:#cdcdcd;font-size:12px}
+
+.chosen_item.cur h3{border-bottom-width:1px;}
+.chosen_item.cur .posi{display:block}
+.flt_list .num_warning{font-size:12px !important;background:#f6403c;padding:0 4px;font:10px/14px arial;color:#fff;border-radius:3px;vertical-align:middle;display:inline-block}
+.flt_list .num_warning:before {content:"";width:4px;height:4px;position:absolute;background:#f6403c;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);bottom:-2px;right:10px;}
+/*== 机票选择页 E ==*/
+/*==订单确认页 过渡版 S==*/
+#c-diyfhxsdp-orderdetail-box .flt_box .flt_item li{border-top-width:1px;padding:10px 10px 10px 25px;position:relative;}
+#c-diyfhxsdp-orderdetail-box .flt_box .flt_item li:first-child{border-top-width:0;}
+#c-diyfhxsdp-orderdetail-box .flt_box .flt_item li .tag{float:left;margin-left:-25px}
+#c-diyfhxsdp-orderdetail-box .flt_box .flt_item li .tag:before{margin-right:0}
+#c-diyfhxsdp-orderdetail-box .flt_box .flt_item li .tag.fei{background-position:-60px -300px;}
+#c-diyfhxsdp-orderdetail-box .flt_box .flt_item li .tag.hui{background-position:-80px -300px;}
+#c-diyfhxsdp-orderdetail-box .flt_box .flt_item li .tag.num{background:#a1a1a1;width:16px;height:16px;color:#fff;font:14px/16px arial;}
+/*==订单确认页 过渡版 E==*/
+/*== 城市选择页 S ==*/
+.city_wrap{ padding-right:0}
+/*== 城市选择页 E ==*/

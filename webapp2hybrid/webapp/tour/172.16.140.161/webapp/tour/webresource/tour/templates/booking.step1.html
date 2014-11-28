@@ -1,0 +1,38 @@
+<div class="body">
+    <div class="fixed_top" <%if(isInApp){ %>="" style="top:0" <%} %>="">
+        <div class="select_num_box basefix">
+            <div class="man_box">
+                <div class="room_num">
+                    <i class="list_num_dec">-</i>
+                    <span class="list_num"><%= adult_num %></span>
+                    <i class="list_num_inc num_invalid">+</i>
+                </div>成人
+            </div>
+            <% if(ischildbook){ %>
+            <div class="child_box">
+                <div class="room_num">
+                    <i class="list_num_dec">-</i>
+                    <span class="list_num"><%= child_num %></span>
+                    <i class="list_num_inc num_invalid">+</i>
+                </div>儿童<i class="child_notice js-notice-step1"></i>
+                <div class="child_notice_pop js-notice-pop-step1" style="display:none;">儿童标准：2-12岁</div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <div class="price_calendar">
+        <div class="calendar_title">
+            <h2>请选择出发日期</h2>
+            <span>代表已成团</span>
+        </div>
+        <div id="js-calendar-wrapper"></div>
+    </div>
+</div>
+<footer class="book_next">
+    <div class="next_col">
+        <span class="js-price-step1" style="display: none;">订单总额：<dfn>¥</dfn><span>--</span></span>
+        <i class="loading_ico js-loading-step1" style="display:none"></i>
+        <em class="price_detail js-price-detail" style="display:none">费用明细</em>
+        <a href="javascript:;" class="btn_next">下一步</a>
+    </div>
+</footer>

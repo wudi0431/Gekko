@@ -1,0 +1,316 @@
+{
+  "name": "ctrip-h5-lizart-ant",
+
+  "defaultApplication": "app",
+  "applications":       {
+    "app":       {
+      "defaultPath": "1.0",
+      "paths":       {
+        "1.0": "../Lizard"
+      }
+    },
+    "res":       {
+      "defaultPath": "v2.3",
+      "paths":       {
+        "v2.3": "../Resource/dev/webapp-v2.3.sp2.1"
+      }
+    },
+    "diyfhx":{
+      "defaultPath":"v5.10.2",
+      "paths":{
+        "v5.7":"../../../../TaoCan/MobileH5/Branches/Branch_20140623/DIYFHX/v5.7QTE",
+        "v5.10":"../../../../TaoCan/MobileH5/Branches/Branch_20141017/DIYFHX/v5.10",
+        "v5.10.1":"../../../../TaoCan/MobileH5/Branches/Branch_20141028/DIYFHX/v5.10",
+        "v5.10.2":"../../../../TaoCan/MobileH5/Release/176_1125/DIYFHX/v5.10",
+        "v6.0":"../../../../TaoCan/MobileH5/Branches/Branch_20141120_FHX/DIYFHX/v6.0"
+      }
+    },
+     "diyfhxsdp":{
+      "defaultPath":"v1.0",
+      "paths":{
+        "v1.0":"../../../../TaoCan/MobileH5/Branches/Branch_20140912/DIYFHXSDP/v5.9"
+      }
+    },
+     "diy":{
+      "defaultPath":"v1.0",
+      "paths":{
+        "v1.0":"../../../../TaoCan/MobileH5/Branches/Branch_20140912/DIY/v5.9"
+      }
+    },
+    "car":       {
+      "defaultPath": "v2.3",
+      "paths":       {
+        "v2.3":   "../car/dev/webapp-v2.3.sp2.1",
+        "v2.0":   "../car/dev/Hybrid-v5.4.sp2.0",
+        "vwpfix": "../car/dev/CarWebApp-v5.4-WPFix"
+      }
+    },
+    "flight":    {
+      "defaultPath": "v2.3",
+      "paths":       {
+        "v2.3":   "../flight/dev/m.ctrip.com-v2.3.sp1.3",
+        "v2.3.2": "../flight/dev/m.ctrip.com-v2.3.sp2.1",
+        "v2.3.3": "../flight/dev/WebApp-v2.3.sp3",
+        "v2.4.1": "../flight/dev/WebApp-v2.4",
+        "v2.4.2": "../flight/dev/WebApp-v2.4.2"
+      }
+    },
+    "fltintl":   {
+      "defaultPath": "v2.3",
+      "paths":       {
+        "v2.3":   "../flightintl/dev/WebApp-v2.3.sp1.3",
+        "v2.3.2": "../flightintl/dev/WebApp-v2.3.sp2.2",
+        "v2.4.1": "../flightintl/dev/WebApp-v2.4",
+        "v2.4.2": "../flightintl/dev/WebApp-v2.4.2"
+      }
+    },
+    "fpage":     {
+      "defaultPath": "v2.4.1",
+      "paths":       {
+        "v2.4.1": "../FlightCommon/dev/WebApp-v2.4.sp1"
+      }
+    },
+    "train":     {
+      "defaultPath": "v2.3",
+      "task":        "",
+      "paths":       {
+        "v2.3": "../train/dev/webapp-v2.3.sp2.1"
+      }
+    },
+    "hotel":     {
+      "defaultPath": "v2.3.3",
+      "paths":       {
+        "v2.3.3": "../hotel/dev/WebApp-v2.3.sp3.1",
+        "hyv5.7": "../hotel/dev/WebApp-v2.3.sp4.1_Hybird_For_App.v5.7"
+      }
+    },
+    "vip":       {
+      "defaultPath": "v2.3",
+      "paths":       {
+        "v2.3": "../HotelMisc/dev/webapp-v1"
+      }
+    },
+    "grab":      {
+      "defaultPath": "v2.3.1",
+      "paths":       {
+        "v2.3.1": "../grab/dev/WebApp-hotel-Wechat"
+      }
+    },
+    "hotelgrab": {
+      "defaultPath": "v2.3",
+      "paths":       {
+        "v2.3": "../HotelGrab/Dev/WebAppV5.5"
+      }
+    },
+
+    "rewards": {
+      "defaultPath": "v2.3",
+      "paths":       {
+        "v2.3": "../Rewards/dev/WebApp-rewards"
+      }
+    },
+
+
+    "tuan":          {
+      "defaultPath": "v2.3",
+      "task":        "noHtmlMin",
+      "paths":       {
+        "v2.3":   "../tuan/dev/WebApp-tuanapp-2014-02-11",
+        "bugfix": "../tuan/dev/WebApp-bugfix"
+      }
+    },
+    "tour":          {
+      "defaultPath": "v1.3",
+      "paths":       {
+        "v2.3": "../vacations/dev/webapp-v2.3.sp2.1",
+        "v1.3": "D:\\UED\\website\\_webresource_\\code\\lizard\\2.0\\tour_seo\\Tour\\Tour"
+      }
+    },
+    "ticket":        {
+      "defaultPath": "v5.6",
+      "paths":       {
+        "v5.6":  "../ticket/dev/Hybrid-v5.6.sp1.0",
+        "v5.51": "../ticket/dev/Hybrid-v5.5.sp0.5",
+        "v5.5":  "../ticket/dev/Hybrid-v5.5.sp1.0",
+        "v2.3":  "../ticket/dev/WebApp-seo"
+      }
+    },
+    "myctrip":       {
+      "defaultPath": "v2.3",
+      "task":        "noHtmlMin",
+      "paths":       {
+        "v2.3": "../myctrip/dev/webapp-v2.3.sp2.2",
+        "v5.7": "../myctrip/dev/WebApp-5.7-LatestVersion",
+        "m":    "../myctrip/mainline/WebApp-mainline"
+      }
+    },
+    "cpage":         {
+      "defaultPath": "v5.6",
+      "paths":       {
+        "v2.3":   "../cpage/dev/webapp-v2.3.sp2.1",
+        "v2.3.2": "../cpage/dev/WebApp-v2.3.sp2.2",
+        "v5.6":   "../cpage/dev/WebApp-crm"
+      }
+    },
+    "lipin":         {
+      "defaultPath": "v1.0",
+      "paths":       {
+        "v1.0": "../lipin/dev/webapp-v1.0",
+        "v1.2": "../lipin/dev/webapp-v1.2"
+      }
+    },
+    "cruise":        {
+      "defaultPath": "v1.0",
+      "paths":       {
+        "v1.0": "../cruise"
+      }
+    },
+    "payment":       {
+      "defaultPath": "v2.3",
+      "task":        "payment",
+      "paths":       {
+        "v2.3": "../payment/dev/WebApp-v2.3.sp2.2-vacations"
+      }
+    },
+    "market":        {
+      "defaultPath": "v2.3",
+      "paths":       {
+        "v2.3": "../market/dev/webapp-v2.3.sp2.1"
+      }
+    },
+    "promocode":     {
+      "defaultPath": "v2.3",
+      "paths":       {
+        "v2.3": "../promocode/dev/webapp-v1.0"
+      }
+    },
+    "schedule":      {
+      "defaultPath": "v5.7",
+      "paths":       {
+        "v1.0": "../schedule/dev/webapp-v1.0",
+		"v5.7":"../schedule/dev/webapp-v5.7"
+      }
+    },
+    "youth":         {
+      "defaultPath": "v1.0",
+      "paths":       {
+        "v1.0": "../youngs/dev/webapp-v1.0"
+      }
+    },
+    "favorite":      {
+      "defaultPath": "v2.3",
+      "paths":       {
+        "v2.3": "../Favorite/Mainline/WebApp-favorite"
+      }
+    },
+    "topshopclient": {
+      "defaultPath": "v5.6",
+      "paths":       {
+        "v5.6": "../topshop/release/webapp-v5.6"
+      }
+    },
+    "destination":   {
+      "defaultPath": "v5.6",
+      "paths":       {
+        "v5.6": "../destination"
+      },
+      "task":        "destination"
+    }
+  },
+
+  "tasks": {
+    "web": {
+      "default":   ["clean", "copy:web_sbu", "uglify", "htmlmin:web", "cssmin:minify", "replace:web_app_css", "requirejs", "replace:templates", "strip", "compress:web"],
+      "noHtmlMin": ["clean", "copy:web_sbu", "uglify", "cssmin:minify", "replace:web_app_css", "requirejs", "replace:templates", "strip", "compress:web"],
+      "payment":   ["clean", "copy:web_sbu", "uglify", "htmlmin:web", "cssmin:minify", "requirejs", "replace:templates", "strip", "compress:web"],
+      "app":       ["clean", "uglify", "requirejs", "strip", "compress:web" ],
+      "res":       ["clean", "copy:web_sbu", "uglify", "cssmin", "replace:web_res_css", "requirejs", "compress:web"]
+    },
+    "app": {
+      "default":     ["clean", "requirejs", "addBuildVersion", "addVersion", "copy:app_sbu", "htmlmin:app", "replace:templates", "strip", "curl", "unzip", "compress:app", "compress:com_app", "compress:com_res", "compress:com_webapp", "hashify", "formatMD5"],
+      "noHtmlMin":   ["clean", "requirejs", "addBuildVersion", "addVersion", "copy:app_sbu", "htmlmin:app", "replace:templates", "strip", "curl", "unzip", "compress:app", "compress:com_app", "compress:com_res", "hashify", "formatMD5"],
+      "payment":     ["clean", "requirejs", "addBuildVersion", "addVersion", "copy:app_sbu", "htmlmin:app", "replace:templates", "strip", "compress:app", "hashify", "formatMD5"],
+      "app":         ["clean", "curl", "unzip" , "compress:app", "hashify", "formatMD5"],
+      "res":         ["clean", "curl", "unzip", "compress:app", "hashify", "formatMD5"],
+      "destination": ["copy:zip", "hashify", "formatMD5"]
+    }
+  },
+
+  "tasks2": {
+    "app": {
+      "default": ["shell", "compress:app", "hashify", "formatMD5"]
+    },
+    "web": {
+    }
+  },
+
+  "appOutDir":        "./out/hybrid",
+  "webOutDir":        "./out/web",
+  "frameworkInclude": [
+    "cUILoadingLayer",
+    "cUILoading",
+    "cUIToast",
+    "cUIAlert",
+    "cWidgetFactory",
+    "cWidgetHeaderView",
+    "AbstractAPP",
+    "App",
+    "c",
+    "cUICore",
+    "cUI",
+    "cHistory",
+    "cUIScrollList",
+    "cUIAnimation",
+    "cUtility",
+    "cBase",
+    "cView",
+    "cAbstractModel",
+    "cModel",
+    "cStore",
+    "cStorage",
+    "cAjax",
+    "cLog",
+    "cDataSource",
+    "CommonStore",
+    "cSales",
+    "cMultipleDate",
+    "cLazyload",
+    "cListAdapter",
+    "cBasePageView",
+    "cCommonPageFactory",
+    "cWidgetFactory",
+    "common_r"
+  ],
+  "version":          "0.1.0",
+  "description":      "将Grunt部署在现在的项目中做编译",
+  "repository":       {
+    "type": "git",
+    "url":  "https://gitcafe.com/leewind/leewind-grunt"
+  },
+  "author":           "Michael.Lee",
+  "license":          "MIT",
+  "devDependencies":  {
+    "grunt":                   "~0.4.1",
+    "grunt-contrib-jshint":    "~0.6.3",
+    "grunt-contrib-concat":    "~0.3.0",
+    "grunt-contrib-uglify":    "~0.2.1",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-contrib-compress":  "~0.5.2",
+    "grunt-contrib-htmlmin":   "~0.1.3",
+    "grunt-contrib-copy":      "~0.4.1",
+    "grunt-contrib-cssmin":    "~0.6.2",
+    "grunt-contrib-clean":     "~0.5.0",
+    "grunt-strip":             "~0.2.1",
+    "grunt-hashify":           "~0.0.6",
+    "grunt-combine":           "~0.8.3",
+    "grunt-replace":           "~0.6.1",
+    "grunt-nodemailer":        "~0.1.2",
+    "grunt-curl ":             "~1.5.1",
+    "grunt-zip":               "",
+    "grunt-shell":             "~0.7.0"
+
+  },
+  "dependencies":     {
+    "express": "3.x"
+  }
+}

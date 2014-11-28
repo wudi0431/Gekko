@@ -1,0 +1,29 @@
+﻿<div class="nofoot">
+	<ul class="question_wrap">
+        <%_.each(data.qas,function(v,k){ %>
+        <li>
+            <div class="question_product">
+                <span><%=v.qDate %></span>***<%=v.uName.substr(3,3) %>
+            </div>
+            <dl class="question_detail">
+				<dt><%=v.content %></dt>
+				<dd><%=v.reply %></dd>
+		    </dl>
+        </li>
+        <%}) %>
+	</ul>
+	<div class="base_loading" style="display:none;"><i></i>加载中</div>
+    <div class="no_more" style="display:none">没有更多结果了</div>
+    <div class="wireless_failure" style="display:none;">
+	    <div class="no_wifi">
+		<i class="wifi_ico"></i>
+		<p>网络不给力，请稍后再试试吧</p>
+		<a class="try_again" href="javascript:;">重试</a>
+	</div>
+	    <div class="dial_service">
+		<p>或者拨打携程客服电话</p>
+		<a class="dial_btn" href="tel:8008206666">联系客服</a>
+	</div>
+</div>	
+<div class="failure_mask" style="top:400px;display:none;">网络连接超时，请稍后重试</div>
+</div>

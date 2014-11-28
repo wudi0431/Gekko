@@ -1,0 +1,10 @@
+{
+	"hostname":"172.16.140.161:8082",
+	"views":{
+		"/webapp/tour/index":1,
+		"/webapp/tour/VacationList/2/2/%E4%B8%8A%E6%B5%B7/mobi/1/nopage":1,
+		"/webapp/tour/Detail/1666873/2/2/nopage":1
+	},
+	"defaultView":"/webapp/tour/VacationList/2/2/上海/mobi/1/nopage",
+	"channel":"tour"
+}

@@ -1,0 +1,37 @@
+﻿@using System.Configuration
+
+<!DOCTYPE html>
+<html>
+<head>
+    @RenderPage("../Shared/Header.cshtml")
+</head>
+<body class="gray" onselectstart="return false">
+    @RenderPage("../Shared/BodyLayout.cshtml")
+
+    <script type="text/lizard-config">
+        {
+            "url_schema": "/index/{depetId}/{key}/{deptName}",
+            "model": {
+                "apis": [],
+                "init_data": {"depetId":2, "key":"长江三峡"}
+            },
+            "view":{
+                "header": Lizard.T("headTmpl"),
+                "viewport": Lizard.T("viewportTmpl")
+            },
+            "controller": "@ConfigurationManager.AppSettings["WebresourcePDBaseUrl"]tour/controllers/index.js"
+        }
+    </script>
+
+    <script id="headTmpl" type="text/lizard-template">
+        <h1>团队游</h1>
+    </script>
+
+    <script id="viewportTmpl" type="text/lizard-template">
+        @RenderPage("templates/index.cshtml");
+    </script>
+    @RenderPage("../Shared/Footer.cshtml")
+</body>
+</html>
+
+

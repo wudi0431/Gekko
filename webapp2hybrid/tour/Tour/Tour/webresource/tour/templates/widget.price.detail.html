@@ -1,0 +1,50 @@
+<div class="pop pop_cost js-pop-price-detail" style="display:none;z-index:9999">
+    <h2 class="pop_title">费用明细</h2>
+    <div class="pop_bd">
+        <ul class="base_list order_list">
+            <li>
+                <h3>基本团费</h3>
+                <table class="base_tb" width="100%">
+                    <tbody>
+                        <tr>
+                            <th>成人</th>
+                            <td style="width:110px"><span class="base_price"><dfn>¥</dfn><%=Math.floor(priceDetail.aduAmt/adultNum)%>/人x<%=adultNum%></span></td>
+                        </tr>
+                        <%if(childNum){%>
+                        <tr>
+                            <th>儿童</th>
+                            <td><span class="base_price"><dfn>¥</dfn><%=Math.floor(priceDetail.cAmt/childNum)%>/人x<%=childNum%></span></td>
+                        </tr>
+                        <%}%>
+                    </tbody>
+                </table>
+            </li>
+            <%if(priceDetail.addFreeAmt){%>
+            <li>
+                <h3>附加费</h3>
+                <table class="base_tb" width="100%">
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <td style="width:70px"><span class="base_price"><dfn>¥</dfn><%=priceDetail.addFreeAmt%></span></td>
+                        </tr>
+                        <%_.each(priceDetail.addFreeLst, function(v,k){%>
+                            <%if(v.qty != 0){%>
+                            <tr>
+                                <th><%=v.proNM%></th>
+                                <td><span class="base_price"><%=v.qty+v.unit%></span></td>
+                            </tr>
+                            <%}%>
+                        <%})%>
+                    </tbody>
+                </table>
+            </li>
+            <%}%>
+            <li class="coupon_li" style="<%=priceDetail.preferPrice ? '' : 'display:none;'%>">
+                <h3>优惠</h3>
+                <span class="base_price">-<dfn>¥</dfn><span class="discount"><%=Math.abs(priceDetail.preferPrice)%></span></span>
+            </li>
+        </ul>
+        <div class="price_all">订单总额：<span class="base_price"><dfn>¥</dfn><span class="total"><%=Math.floor(tPrice)%></span></span></div>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+define(function(){return ("<div class=\"calendar_box\">\r\n    <%= monthesHTML %>\r\n</div>");});

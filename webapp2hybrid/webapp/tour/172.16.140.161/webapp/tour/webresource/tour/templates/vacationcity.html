@@ -1,0 +1,49 @@
+﻿<div class="body nofoot" style="">
+    <div id="departSearch" class="top_box depart_search starting_top">
+	    <div class="search_wrap2">
+		    <div class="search_p">
+			    <div class="search_box2">
+				    <input type="text" class="search_text" id="keyword" placeholder="全拼/简拼/中文">
+                    <a href="javascript:;" class="clear_input2" style="display:none"></a>
+			    </div>
+			    <a href="javascript:;" class="cancel" style="display:none;">取消</a>
+		    </div>
+	    </div>
+    </div>
+    <div class="city_box">
+        <%if(!data.hideCurrent){ %>
+        <div class="currentcity">
+            <h4 class="area_title area_cur">当前城市</h4>
+            <ul class="item_select starting_select">
+                <li id="curcity" data-city="<%=data.geoLocation.name %>" data-id="<%=data.geoLocation.id %>" class="<%if(data.geoLocation.id==data.selectedDepart.id){ %>cur<%} %>"><%=data.geoLocation.name %></li>
+            </ul>
+        </div>
+        <%} %>
+		<h4 type="history_title" class="area_title area_cur">历史选择</h4>
+        <%if(data.departSeleHistory && data.departSeleHistory.length){ %>        
+        <ul class="item_select starting_select">
+            <%_.each(data.departSeleHistory,function(v,k){ %>
+            <li class="<%if(v.id==data.selectedDepart.id){ %> cur<%} %>" data-name="<%=v.city %>" data-id="<%=v.id %>"><%=v.city %></li>
+            <%}) %>
+        </ul>
+        <%} %>
+        <h4 class="area_title area_cur alphabet">热门出发地</h4>
+        <ul class="item_select starting_select">
+            <%_.each(data.hotCity,function(v,k){ %>
+            <li class="<%if(v.id==data.selectedDepart.id){ %> cur<%} %>" data-name="<%=v.name %>" data-id="<%=v.id %>"><%=v.name %></li>
+            <%}) %>
+        </ul>
+        <%_.each(data.zimu,function(u,j){ %>
+        <h4 class="area_title alphabet"><%=u.initial %></h4>
+        <ul class="item_select starting_select hidden">
+            <%_.each(u.data,function(w,l){ %>
+            <li class="<%if(w.id==data.selectedDepart.id){ %> cur<%} %>" data-name="<%=w.name %>" data-id="<%=w.id %>" data-filter="<%=w.ename %> <%=w.name %> <%=w.py %> <%=w.jp %> "><%=w.name %></li>
+            <%}) %>
+        </ul>
+        <%}) %>
+    </div>
+    <div class="search_content hidden">
+        <ul class="associate search_history" style=""></ul>
+	    <div class="sub_box no_result" style="display:none">没有结果</div>
+    </div>
+</div>

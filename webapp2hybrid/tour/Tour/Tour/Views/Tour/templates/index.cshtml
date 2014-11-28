@@ -1,0 +1,61 @@
+﻿<div class="body nofoot">
+	<div class="top_box index_search">
+		<div class="search_col">
+			<div class="starting"><span id="g_depart">上海</span></div>
+			<div class="search_mod" id="g_dest">目的地、主题或关键字</div>
+		</div>
+		<p class="hot_motif">
+            <a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href='@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/海岛/1/nopage'<%} %>  data-name="海岛">海岛</a>
+            <a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href="@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/古镇/1/nopage"<%} %>  data-name="古镇">古镇</a>
+            <a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href="@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/蜜月/1/nopage"<%} %>  data-name="蜜月">蜜月</a>
+            <a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href="@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/赏花/1/nopage"<%} %>  data-name="赏花">赏花</a>
+            <a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href="@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/亲子/1/nopage"<%} %>  data-name="亲子">亲子</a>
+            <a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href="@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/乐园/1/nopage"<%} %>  data-name="乐园">乐园</a>
+        </p>
+	</div>
+	<table class="motif_list">
+        <tbody>
+            <tr>
+	            <td><a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href="@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/周边/1/nopage"<%} %> data-name="周边">
+				<i class="motif_rim" data-name="周边"></i>周边
+				</a>
+				</td>
+				<td><a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href="@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/国内/1/nopage"<%} %> data-name="国内">
+				<i class="motif_inland" data-name="mobi"></i>国内
+				</a>
+				</td>
+	            <td><a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href="@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/港澳台/1/nopage"<%} %> data-name="港澳台">
+				<i class="motif_hktw" data-name="港澳台"></i>港澳台
+				</a>
+				</td>
+				<td><a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href="@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/日韩/1/nopage"<%} %> data-name="日韩">
+				<i class="motif_jsk" data-name="日韩"></i>日韩
+				</a>
+				</td>	            
+            </tr>
+            <tr>
+			    <td><a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href="@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/东南亚/1/nopage"<%} %> data-name="东南亚">
+				<i class="motif_asia" data-name="东南亚"></i>东南亚
+				</a>
+				</td>
+				<td><a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href="@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/欧洲/1/nopage"<%} %> data-name="欧洲">
+				<i class="motif_europe" data-name="欧洲"></i>欧洲
+				</a>
+				</td>
+	            <td><a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href="@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/美洲/1/nopage"<%} %> data-name="美洲">
+				<i class="motif_america" data-name="美洲"></i>美洲
+				</a>
+				</td>
+				<td><a lizard-catch="off" <%if(Lizard.P('deptName')){ %>href="@Url.Content("~/")vacationlist/<%=Lizard.P('depetId')%>/<%=Lizard.P('depetId')%>/<%=Lizard.P('deptName')%>/澳中东非/1/nopage"<%} %> data-name="澳中东非">
+				<i class="motif_australia" data-name="澳中东非"></i>澳中东非
+				</a>
+				</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="c_seckill"></div>
+    <div class="homerecommend">
+        <div class="home_base_loading base_loading"><i></i>加载中</div>
+	    <div class="sift_product hidden"></div>
+    </div>
+</div>

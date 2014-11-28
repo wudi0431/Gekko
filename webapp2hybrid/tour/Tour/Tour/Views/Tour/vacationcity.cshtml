@@ -1,0 +1,35 @@
+﻿@using System.Configuration
+
+<!DOCTYPE html>
+<html>
+<head>
+    @RenderPage("../Shared/Header.cshtml")
+</head>
+<body class="gray" onselectstart="return false">
+    @RenderPage("../Shared/BodyLayout.cshtml")
+
+    <script type="text/lizard-config">
+        {
+            "url_schema": "/vacationcity/{departCity}/{key}",
+            "model": {
+                "apis":[]                
+            },
+            "view":{
+                "header": Lizard.T("headTmpl"),
+                "viewport": Lizard.T("viewportTmpl")
+            },
+            "controller": "@ConfigurationManager.AppSettings["WebresourcePDBaseUrl"]tour/controllers/vacationcity.js"
+        }
+    </script>
+
+    <script id="headTmpl" type="text/lizard-template">
+        <h1>请选择城市</h1>
+    </script>
+
+    <script id="viewportTmpl" type="text/lizard-template">
+	    <BR>
+    </script>
+    @RenderPage("../Shared/Footer.cshtml")
+
+</body>
+</html>

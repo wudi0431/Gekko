@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=320.1, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="res/css/main.css">
+    <link rel="stylesheet" type="text/css" href="res/css/flt_htl_v58.css">
+    <link rel="stylesheet" type="text/css" href="http://webresource.c-ctrip.com/styles/h5/common/main.css">
+    <link rel="stylesheet" type="text/css" href="http://webresource.c-ctrip.com/ResH5TaoCanOnline/R2/fhx/v_58/flt_htl_v58.css?v=2">
+</head>
+<body onselectstart="return false">
+    <div id="main">
+    </div>
+    <input type="hidden" id="page_id" value="wait">
+    <input type="hidden" id="bf_ubt_orderid" value="">
+    <script type="text/javascript">
+        if (window.localStorage.getItem('isInApp') !== '1') {
+            window.localStorage.setItem('isInApp', 1);
+        }
+    </script>
+    <!-- 暂时干掉sockjs内容 -->
+    <!--<script type="text/javascript" src="../res/libs/sockjs-0.3.min.js"></script>-->
+    <!--<script type="text/javascript" src="../res/libs/console.js"></script>-->
+   <script type="text/javascript" src="../res/libs/bridge.js"></script>
+    <script type="text/javascript" src="../res/libs/require.min.js"></script>
+    <script type="text/javascript" src="../res/libs/libs.js"></script>
+    <script type="text/javascript" src="../res/libs/mubt.min.js"></script>
+    <script type="text/javascript" src="../app/1.1/hybrid/common.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+    <img src="http://pic.c-ctrip.com/h5/taocan/flt_htl_v58/pic_none.png" style="display: none">
+</body>
+</html>
