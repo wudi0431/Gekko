@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ctrip test</title>
+    <link href="./node_modules/mocha/mocha.css" rel="stylesheet">
+    <script src="./node_modules/requirejs/require.js"></script>
+     <script type="text/javascript" src="http://webresource.c-ctrip.com/code/lizard/1.1/web/3rdlibs/libs.js"></script>
+    <script src="common.js"></script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+  </body>
+<script>
+function d(str) {
+  console.log(str);
+}
+
+(function() {
+	function nodeModules(path) {
+	  return './node_modules/' + path + '/' + path;
+	}
+
+  function testModule(path) {
+    return '../test/' + path;
+  }
+
+	requirejs.config({
+    baseUrl: '.',
+    shim: {
+      mocha: {
+        exports: 'mocha'
+      } 
+    },
+	  paths: {
+	    'mocha': nodeModules('mocha'),
+	    'chai': nodeModules('chai'),
+      'sinon': './node_modules/sinon/pkg/sinon'
+	  }
+	});
+	
+	requirejs([
+		'mocha',
+		'chai',
+    'sinon'
+	], function(mocha, chai, sinon) {
+		mocha.setup('bdd');
+
+		//导出全局expect
+		window.expect = chai.expect;
+
+		//加载测试模块
+		requirejs([
+			testModule('testcases/core/c.core.inherit'),
+      testModule('testcases/common/c.ajax'),
+      testModule('testcases/model/c.model'),
+      testModule('testcases/ui/c.ui.abstract.view')
+		], function() {
+      if (window.mochaPhantomJS) { 
+        mochaPhantomJS.run(); 
+      } else {
+        mocha.run();
+      }
+    });
+			
+
+	});
+
+})();
+
+</script>
+</html>

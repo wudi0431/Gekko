@@ -1,0 +1,23 @@
+{
+  "name": "testcases",
+  "version": "0.0.1",
+  "devDependencies": {
+    "mocha": "~1.18.2",
+    "chai": "~1.9.1",
+    "sinon": "~1.9.1",
+    "requirejs": "~2.1.11",
+    "grunt": "^0.4.4",
+    "grunt-cli": "^0.1.13",
+    "grunt-mocha-test": "^0.10.0",
+    "hooker": "^0.2.3",
+    "blanket": "^1.1.6",
+    "jquery": "^2.1.1",
+    "grunt-jquery-builder": "^0.1.1",
+    "mocha-phantomjs": "^3.3.2",
+    "jsdom": "^0.10.5",
+    "chai-spies": "^0.5.1",
+    "glob": "^3.2.9",
+    "lodash": "^2.4.1",
+    "xmlhttprequest": "^1.6.0"
+  }
+}

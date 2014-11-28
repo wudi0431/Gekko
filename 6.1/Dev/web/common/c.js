@@ -1,0 +1,1 @@
+define(["cBase","cUI","cUtility","cView","cModel","cStore","cStorage","cAjax","CommonStore","cLazyload","cLog"],function(a,b,c,d,e,f,g,h,i,j,k){var l={base:a,ui:b,view:d,utility:c,store:f,storage:g,model:e,ajax:h,log:k,commonStore:i,lazyload:j};return l});

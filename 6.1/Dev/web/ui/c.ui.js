@@ -1,0 +1,1 @@
+define(["cUICore"],function(a){return a});

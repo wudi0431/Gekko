@@ -1,0 +1,1 @@
+define(["cBase","cUIAbstractView"],function(a,b){var c={};return c.__propertys__=function(){this.tpl=this.template(['<div class="tpl">template</div>'].join("")),$(".tpl").bind("click",function(){alert("123")})},c.initialize=function($super,a){$super(a),this.show(),a.click&&this.clieked()},c.createHtml=function(){return this.tpl()},c.clicked=function(){0},new a.Class(b,c)});

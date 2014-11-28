@@ -1,0 +1,1 @@
+define(["libs","cCoreDate","cCoreInherit","cStorage","cBusinessServertime","Validate"],function(a,b,c,d){{var e={};Array.prototype.slice,Array.prototype.push,d.localStorage}return e});
